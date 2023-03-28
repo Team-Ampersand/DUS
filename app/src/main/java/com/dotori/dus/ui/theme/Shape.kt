@@ -1,4 +1,4 @@
-package com.example.dus.ui.theme
+package com.dotori.dus.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

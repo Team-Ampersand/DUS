@@ -52,6 +52,7 @@ android {
 }
 
 dependencies {
+    implementation(project(ProjectProperties.projectPath))
 
     implementation(AndroidX.CORE_KTX)
     implementation(AndroidX.LIFECYCLE_KTX)

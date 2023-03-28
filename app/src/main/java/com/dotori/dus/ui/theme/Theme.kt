@@ -1,4 +1,4 @@
-package com.example.dus.ui.theme
+package com.dotori.dus.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

@@ -1,4 +1,4 @@
-package com.example.dotori_components
+package com.dotori.dotori_components
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.example.dus
+package com.dotori.dus
 
 import org.junit.Test
 

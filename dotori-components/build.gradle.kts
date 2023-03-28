@@ -1,5 +1,5 @@
 plugins {
-    id(Plugins.androidApplication)
+    id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinKapt)
     id(Plugins.kotlinParcelize)

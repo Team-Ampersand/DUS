@@ -1,4 +1,4 @@
-package com.example.dotori_components
+package com.dotori.dotori_components
 
 import org.junit.Test
 
