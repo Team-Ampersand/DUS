@@ -13,4 +13,9 @@ object Types {
         BLUE,
         DARKBLUE
     }
+
+    enum class DialogType {
+        LIGHT,
+        DARK
+    }
 }
