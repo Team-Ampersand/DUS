@@ -18,4 +18,9 @@ object Types {
         LIGHT,
         DARK
     }
+
+    enum class BottomSheetType {
+        LIGHT,
+        DARK
+    }
 }
