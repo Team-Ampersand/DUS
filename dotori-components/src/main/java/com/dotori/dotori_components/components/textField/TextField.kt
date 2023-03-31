@@ -34,7 +34,6 @@ fun DotoriTextField(
     modifier: Modifier = Modifier,
     types: Types.TextFieldType,
     value: String,
-    onValueChange: (String) -> Unit,
     singleLine: Boolean = true,
     maxLines: Int = 1,
     textStyle: TextStyle = DotoriTypography.body,
@@ -42,7 +41,8 @@ fun DotoriTextField(
     visualTransformation: VisualTransformation = VisualTransformation.None,
     placeholder: String,
     leadingIcon: Int? = null,
-    trailingIcon: Int? = null
+    trailingIcon: Int? = null,
+    onValueChange: (String) -> Unit
 ) {
     val focusRequester by remember { mutableStateOf(FocusRequester()) }
     var isFocus by remember { mutableStateOf(false) }
@@ -50,6 +50,7 @@ fun DotoriTextField(
     val backgroundColor = backgroundColorFor(type = types)
     val mergedTextStyle = textStyle.merge(TextStyle(color = textColor))
     val placeholderColor = placeholderColorFor(type = types)
+    val unFocusColor = backgroundColor
 
     Row(
         verticalAlignment = Alignment.CenterVertically
@@ -58,7 +59,7 @@ fun DotoriTextField(
             value = value,
             onValueChange = onValueChange,
             modifier = modifier
-                .width(380.dp)
+                .fillMaxWidth()
                 .focusRequester(focusRequester)
                 .onFocusChanged {
                     isFocus = it.isFocused
@@ -71,7 +72,6 @@ fun DotoriTextField(
             decorationBox = { innerTextField ->
                 Box(
                     modifier = modifier
-                        .padding(horizontal = 12.dp)
                         .fillMaxWidth()
                         .background(
                             color = backgroundColor,
@@ -79,10 +79,10 @@ fun DotoriTextField(
                         )
                         .border(
                             width = 1.dp,
-                            color = if (isFocus) focusColor else backgroundColor,
+                            color = if (isFocus) focusColor else unFocusColor,
                             shape = RoundedCornerShape(8.dp)
                         )
-                        .padding(vertical = 14.dp, horizontal = 16.dp)
+                        .padding(horizontal = 16.dp, vertical = 14.dp)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         leadingIcon?.let {
