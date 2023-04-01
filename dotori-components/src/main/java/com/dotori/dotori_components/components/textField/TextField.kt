@@ -85,7 +85,7 @@ fun DotoriTextField(
                         .padding(horizontal = 16.dp, vertical = 14.dp)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        leadingIcon?.let {
+                        leadingIcon?.run {
                             leadingIconLoading(id = leadingIcon, types = types)
                             Spacer(modifier = modifier.width(17.dp))
                         }
@@ -99,7 +99,7 @@ fun DotoriTextField(
                                 color = placeholderColor
                             )
                         }
-                        trailingIcon?.let {
+                        trailingIcon?.run {
                             Spacer(modifier = modifier.weight(1f))
                             trailingIconLoading(id = trailingIcon, types = types)
                         }
@@ -151,7 +151,7 @@ private fun placeholderColorFor(type: Types.TextFieldType): Color =
 private fun leadingIconLoading(@DrawableRes id: Int, types: Types.TextFieldType) {
     Icon(
         painter = painterResource(id = id),
-        contentDescription = null,
+        contentDescription = "leadingIcon",
         tint = iconColorFor(type = types)
     )
 }
@@ -160,7 +160,7 @@ private fun leadingIconLoading(@DrawableRes id: Int, types: Types.TextFieldType)
 private fun trailingIconLoading(@DrawableRes id: Int, types: Types.TextFieldType) {
     Icon(
         painter = painterResource(id = id),
-        contentDescription = null,
+        contentDescription = "trailingIcon",
         tint = iconColorFor(type = types)
     )
 }
