@@ -1,13 +1,10 @@
 package com.dotori.dotori_components.components.textField
 
-import androidx.annotation.DrawableRes
-import com.example.dus.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -17,17 +14,12 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.dotori.dotori_components.components.utils.Types
-import com.dotori.dotori_components.theme.DotoriDarkColor
-import com.dotori.dotori_components.theme.DotoriLightColor
-import com.dotori.dotori_components.theme.DotoriTypography
+import com.dotori.dotori_components.theme.*
 
 @Composable
 fun DotoriTextField(
@@ -40,14 +32,15 @@ fun DotoriTextField(
     focusColor: Color = DotoriLightColor.Primary10,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     placeholder: String,
-    leadingIcon: Int? = null,
-    trailingIcon: Int? = null,
+    leadingIcon: @Composable ((Color) -> Unit)? = null,
+    trailingIcon: @Composable ((Color) -> Unit)? = null,
     onValueChange: (String) -> Unit
 ) {
     val focusRequester by remember { mutableStateOf(FocusRequester()) }
     var isFocus by remember { mutableStateOf(false) }
     val textColor = textColorFor(type = types)
     val backgroundColor = backgroundColorFor(type = types)
+    val iconColor = iconColorFor(type = types)
     val mergedTextStyle = textStyle.merge(TextStyle(color = textColor))
     val placeholderColor = placeholderColorFor(type = types)
     val unFocusColor = backgroundColor
@@ -85,8 +78,8 @@ fun DotoriTextField(
                         .padding(horizontal = 16.dp, vertical = 14.dp)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        leadingIcon?.let {
-                            leadingIconLoading(id = it, types = types)
+                        leadingIcon?.let { leadingIcon ->
+                            leadingIconLoading(icon = { leadingIcon(it) }, iconColor = iconColor)
                             Spacer(modifier = modifier.width(17.dp))
                         }
                         if (value.isEmpty()) {
@@ -99,15 +92,15 @@ fun DotoriTextField(
                                 color = placeholderColor,
                             )
                         }
-                        trailingIcon?.let {
+                        trailingIcon?.let { trailingIcon ->
                             Spacer(modifier = modifier.weight(1f))
-                            trailingIconLoading(id = it, types = types)
+                            trailingIconLoading(icon = { trailingIcon(it) }, iconColor = iconColor)
                         }
                     }
                     Row(
                         modifier = modifier
                             .padding(
-                                horizontal = if(leadingIcon != null) 41.dp else 0.dp
+                                horizontal = if (leadingIcon != null) 41.dp else 0.dp
                             )
                             .padding(top = 3.dp)
                     ) {
@@ -148,21 +141,17 @@ private fun placeholderColorFor(type: Types.TextFieldType): Color =
     }
 
 @Composable
-private fun leadingIconLoading(@DrawableRes id: Int, types: Types.TextFieldType) {
-    Icon(
-        painter = painterResource(id = id),
-        contentDescription = "leadingIcon",
-        tint = iconColorFor(type = types)
-    )
+private fun leadingIconLoading(icon: @Composable ((Color) -> Unit)?, iconColor: Color) {
+    icon?.let {
+        it(iconColor)
+    }
 }
 
 @Composable
-private fun trailingIconLoading(@DrawableRes id: Int, types: Types.TextFieldType) {
-    Icon(
-        painter = painterResource(id = id),
-        contentDescription = "trailingIcon",
-        tint = iconColorFor(type = types)
-    )
+private fun trailingIconLoading(icon: @Composable ((Color) -> Unit)?, iconColor: Color) {
+    icon?.let {
+        it(iconColor)
+    }
 }
 
 @Preview(showBackground = true)
@@ -197,7 +186,7 @@ fun textFieldPreview() {
             value = lightTestText2,
             onValueChange = { lightTestText2 = it },
             placeholder = "Light Dotori TextField Test",
-            leadingIcon = R.drawable.person
+            leadingIcon = { PersonIcon(contentDescription = "PersonIcon", tint = it) },
         )
 
         var darkTestText2 by remember { mutableStateOf("") }
@@ -208,7 +197,7 @@ fun textFieldPreview() {
             value = darkTestText2,
             onValueChange = { darkTestText2 = it },
             placeholder = "Dark Dotori TextField Test",
-            trailingIcon = R.drawable.eye_close
+            trailingIcon = { EyeCloseIcon(contentDescription = "EyeCloseIcon", tint = it) }
         )
 
         var lightTestText3 by remember { mutableStateOf("") }
@@ -219,8 +208,8 @@ fun textFieldPreview() {
             value = lightTestText3,
             onValueChange = { lightTestText3 = it },
             placeholder = "Light Dotori TextField Test",
-            leadingIcon = R.drawable.person,
-            trailingIcon = R.drawable.x_mark
+            leadingIcon = { PersonIcon(contentDescription = "PersonIcon", tint = it) },
+            trailingIcon = { XMarkIcon(contentDescription = "XMarkIcon", tint = it) }
         )
 
         var darkTestText3 by remember { mutableStateOf("") }
@@ -231,8 +220,8 @@ fun textFieldPreview() {
             value = darkTestText3,
             onValueChange = { darkTestText3 = it },
             placeholder = "Dark Dotori TextField Test",
-            leadingIcon = R.drawable.lock,
-            trailingIcon = R.drawable.eye_close
+            leadingIcon = { LockIcon(contentDescription = "LockIcon", tint = it) },
+            trailingIcon = { EyeCloseIcon(contentDescription = "EyeCloseIcon", tint = it) }
         )
     }
 }
