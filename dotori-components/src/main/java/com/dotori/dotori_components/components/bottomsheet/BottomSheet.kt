@@ -6,23 +6,19 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.unit.dp
-import com.dotori.dotori_components.components.utils.Types.BottomSheetType
-import com.dotori.dotori_components.theme.DotoriDarkColor
-import com.dotori.dotori_components.theme.DotoriLightColor
+import com.dotori.dotori_components.theme.DotoriColor.CardBackGround
 
 @Composable
 fun DotoriBottomSheet(
     modifier: Modifier = Modifier,
     sheetShape: Shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
-    type: BottomSheetType,
     sheetContent: @Composable () -> Unit,
     content: @Composable () -> Unit
 ) {
-    val sheetBackgroundColor = backgroundColorFor(type)
+    val sheetBackgroundColor = CardBackGround
 
     Box(modifier) {
         DotoriBottomSheetStack(
@@ -73,10 +69,3 @@ fun DotoriBottomSheetStack(
         }
     }
 }
-
-@Composable
-private fun backgroundColorFor(type: BottomSheetType): Color =
-    when (type) {
-        BottomSheetType.LIGHT -> DotoriLightColor.CardBackGround
-        BottomSheetType.DARK -> DotoriDarkColor.CardBackGround
-    }

@@ -20,6 +20,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.utils.Types
 import com.dotori.dotori_components.theme.*
+import com.dotori.dotori_components.theme.DotoriColor.Natural30
+import com.dotori.dotori_components.theme.DotoriColor.Natural50
+import com.dotori.dotori_components.theme.DotoriColor.Neutral10
+import com.dotori.dotori_components.theme.DotoriColor.Primary10
 
 @Composable
 fun DotoriTextField(
@@ -29,7 +33,7 @@ fun DotoriTextField(
     singleLine: Boolean = true,
     maxLines: Int = 1,
     textStyle: TextStyle = DotoriTypography.body,
-    focusColor: Color = DotoriLightColor.Primary10,
+    focusColor: Color = Primary10,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     placeholder: String,
     leadingIcon: @Composable ((Color) -> Unit)? = null,
@@ -38,11 +42,11 @@ fun DotoriTextField(
 ) {
     val focusRequester by remember { mutableStateOf(FocusRequester()) }
     var isFocus by remember { mutableStateOf(false) }
-    val textColor = textColorFor(type = types)
-    val backgroundColor = backgroundColorFor(type = types)
-    val iconColor = iconColorFor(type = types)
+    val textColor = Neutral10
+    val backgroundColor = Natural50
+    val iconColor = Neutral10
     val mergedTextStyle = textStyle.merge(TextStyle(color = textColor))
-    val placeholderColor = placeholderColorFor(type = types)
+    val placeholderColor = Natural30
     val unFocusColor = backgroundColor
 
     Row(
@@ -111,34 +115,6 @@ fun DotoriTextField(
         )
     }
 }
-
-@Composable
-private fun backgroundColorFor(type: Types.TextFieldType): Color =
-    when (type) {
-        Types.TextFieldType.LIGHT -> DotoriLightColor.Natural50
-        Types.TextFieldType.DARK -> DotoriDarkColor.Natural50
-    }
-
-@Composable
-private fun textColorFor(type: Types.TextFieldType): Color =
-    when (type) {
-        Types.TextFieldType.LIGHT -> DotoriLightColor.Neutral10
-        Types.TextFieldType.DARK -> DotoriDarkColor.Neutral10
-    }
-
-@Composable
-private fun iconColorFor(type: Types.TextFieldType): Color =
-    when (type) {
-        Types.TextFieldType.LIGHT -> DotoriLightColor.Neutral10
-        Types.TextFieldType.DARK -> DotoriDarkColor.Neutral10
-    }
-
-@Composable
-private fun placeholderColorFor(type: Types.TextFieldType): Color =
-    when (type) {
-        Types.TextFieldType.LIGHT -> DotoriLightColor.Natural30
-        Types.TextFieldType.DARK -> DotoriDarkColor.Natural30
-    }
 
 @Composable
 private fun leadingIconLoading(icon: @Composable ((Color) -> Unit)?, iconColor: Color) {
