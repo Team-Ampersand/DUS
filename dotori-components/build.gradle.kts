@@ -49,6 +49,7 @@ dependencies {
 
     implementation(Compose.MATERIAL_COMPOSE)
 
+    implementation(AndroidX.APP_COMPAT)
     implementation(Compose.UI_TOOLING_PREVIEW)
     testImplementation(UnitTest.JUNIT)
     androidTestImplementation(AndroidTest.ANDROID_JUNIT)

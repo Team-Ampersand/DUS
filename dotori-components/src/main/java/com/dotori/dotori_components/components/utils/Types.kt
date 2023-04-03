@@ -23,4 +23,14 @@ object Types {
         LIGHT,
         DARK
     }
+
+    enum class BottomSheetType {
+        LIGHT,
+        DARK
+    }
+}
+
+enum class Theme {
+    LIGHT,
+    DARK
 }
