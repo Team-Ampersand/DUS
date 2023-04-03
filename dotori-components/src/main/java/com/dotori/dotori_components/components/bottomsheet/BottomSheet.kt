@@ -16,10 +16,10 @@ import com.dotori.dotori_components.theme.DotoriLightColor
 
 @Composable
 fun DotoriBottomSheet(
-    sheetContent: @Composable () -> Unit,
     modifier: Modifier = Modifier,
     sheetShape: Shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
     type: BottomSheetType,
+    sheetContent: @Composable () -> Unit,
     content: @Composable () -> Unit
 ) {
     val sheetBackgroundColor = backgroundColorFor(type)

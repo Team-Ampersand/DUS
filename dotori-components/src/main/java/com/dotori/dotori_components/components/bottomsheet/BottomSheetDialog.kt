@@ -17,12 +17,12 @@ import kotlinx.coroutines.*
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DotoriBottomSheetDialog(
-    sheetTopContent: @Composable ColumnScope.() -> Unit,
-    sheetBottomContent: @Composable ColumnScope.() -> Unit,
     modifier: Modifier = Modifier,
     sheetShape: Shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
     sheetPeekHeight: Dp = 0.dp,
     type: Types.BottomSheetType,
+    sheetTopContent: @Composable ColumnScope.() -> Unit,
+    sheetBottomContent: @Composable ColumnScope.() -> Unit,
     content: @Composable (sheetState: BottomSheetState) -> Unit
 ) {
     val sheetBackgroundColor = backgroundColorFor(type)
