@@ -92,11 +92,11 @@ fun DotoriTextField(
                         if (value.isEmpty()) {
                             Text(
                                 text = placeholder,
-                                fontSize = 16.sp,
-                                fontWeight = FontWeight.Medium,
+                                fontSize = textStyle.fontSize,
+                                fontWeight = textStyle.fontWeight,
                                 fontFamily = textStyle.fontFamily,
-                                lineHeight = 1.5F.sp,
-                                color = placeholderColor
+                                lineHeight = textStyle.lineHeight,
+                                color = placeholderColor,
                             )
                         }
                         trailingIcon?.run {
