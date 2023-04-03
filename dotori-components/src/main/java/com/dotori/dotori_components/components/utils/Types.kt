@@ -4,14 +4,12 @@ object Types {
     enum class ButtonType {
         LIGHTBLUE,
         BLUE,
-        DARKBLUE,
         TRANSPARENT
     }
 
     enum class LongButtonType {
         LIGHTBLUE,
         BLUE,
-        DARKBLUE
     }
 
     enum class DialogType {
@@ -23,4 +21,9 @@ object Types {
         LIGHT,
         DARK
     }
+}
+
+enum class Theme {
+    LIGHT,
+    DARK
 }
