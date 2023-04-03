@@ -85,8 +85,8 @@ fun DotoriTextField(
                         .padding(horizontal = 16.dp, vertical = 14.dp)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        leadingIcon?.run {
-                            leadingIconLoading(id = leadingIcon, types = types)
+                        leadingIcon?.let {
+                            leadingIconLoading(id = it, types = types)
                             Spacer(modifier = modifier.width(17.dp))
                         }
                         if (value.isEmpty()) {
@@ -99,9 +99,9 @@ fun DotoriTextField(
                                 color = placeholderColor,
                             )
                         }
-                        trailingIcon?.run {
+                        trailingIcon?.let {
                             Spacer(modifier = modifier.weight(1f))
-                            trailingIconLoading(id = trailingIcon, types = types)
+                            trailingIconLoading(id = it, types = types)
                         }
                     }
                     Row(
