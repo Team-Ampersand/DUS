@@ -19,61 +19,63 @@ import com.dotori.dotori_components.theme.LightSwitchIcon
 
 @Composable
 fun DotoriThemeSwitchButton(
-    switchPadding: Dp,
-    buttonWidth: Dp,
-    buttonHeight: Dp,
+    modifier: Modifier,
+    switchPadding: Dp = 5.dp,
+    buttonWidth: Dp = 70.dp,
+    buttonHeight: Dp = 40.dp,
     isChecked: Boolean = false,
     lightIcon: @Composable () -> Unit = { LightSwitchIcon(contentDescription = "light switch") },
     darkIcon: @Composable () -> Unit = { DarkSwitchIcon(contentDescription = "dark switch") },
-    onSwitchClick: () -> Unit
+    onSwitchClick: (Boolean) -> Unit
 ) {
-    val switchSize by remember { mutableStateOf(buttonHeight-switchPadding*2) }
+    val switchSize by remember { mutableStateOf(buttonHeight-switchPadding*2) } // 버튼의 width 크기
     val interactionSource = remember { MutableInteractionSource() }
     var switchClicked by remember { mutableStateOf(isChecked) }
-    var padding by remember { mutableStateOf(0.dp) }
-
-    padding = if (switchClicked) buttonWidth-switchSize-switchPadding*2 else 0.dp
+    val moveDp = if (switchClicked) buttonWidth-switchSize-switchPadding*2 else 0.dp
 
     val animateSize by animateDpAsState(
-        targetValue = if (switchClicked) padding else 0.dp,
+        targetValue = if (switchClicked) moveDp else 0.dp,
         tween(
-            durationMillis = 500,
+            durationMillis = 150,
             delayMillis = 0,
             easing = LinearOutSlowInEasing
         )
     )
 
+    // 버튼 영역
+    // 버튼의 위치 정하기
     Box(
-        modifier = Modifier
-            .width(buttonWidth)
-            .height(buttonHeight)
-            .clip(CircleShape)
-            .background(if (switchClicked) DotoriColor.Black else DotoriColor.Natural40)
-            .clickable(
-                interactionSource = interactionSource,
-                indication = null
-            ) {
-                switchClicked = !switchClicked
-                onSwitchClick()
-            }
+        modifier = modifier
     ) {
-        Row(modifier = Modifier
-            .fillMaxSize()
-            .padding(switchPadding)
+        Box(    // 기본적인 modifier 속성
+            modifier = Modifier
+                .width(buttonWidth)
+                .height(buttonHeight)
+                .clip(CircleShape)
+                .background(if (switchClicked) DotoriColor.Black else DotoriColor.Natural40)
         ) {
-             Box(
-                 modifier = Modifier
-                     .fillMaxHeight()
-                     .width(animateSize)
-             )
-
-            Box(
+            Row(
                 modifier = Modifier
-                    .size(switchSize)
-                    .clip(CircleShape)
+                    .fillMaxSize()
+                    .padding(switchPadding)
+                    .clickable(
+                        interactionSource = interactionSource,
+                        indication = null,
+                    ) {
+                        switchClicked = !switchClicked
+                        onSwitchClick(switchClicked)
+                    }
             ) {
-                if (switchClicked) darkIcon()
-                else lightIcon()
+                Box(
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .width(animateSize)
+                )
+
+                Box {
+                    if (switchClicked) darkIcon()
+                    else lightIcon()
+                }
             }
         }
     }
