@@ -22,7 +22,7 @@ fun DotoriThemeSwitchButton(
     switchPadding: Dp,
     buttonWidth: Dp,
     buttonHeight: Dp,
-    isChecked: Boolean,
+    isChecked: Boolean = false,
     lightIcon: @Composable () -> Unit = { LightSwitchIcon(contentDescription = "light switch") },
     darkIcon: @Composable () -> Unit = { DarkSwitchIcon(contentDescription = "dark switch") },
     onSwitchClick: () -> Unit

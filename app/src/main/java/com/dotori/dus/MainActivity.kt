@@ -36,9 +36,8 @@ class MainActivity : ComponentActivity() {
                     switchPadding = 5.dp,
                     buttonWidth = 70.dp,
                     buttonHeight = 40.dp,
-                    isChecked = false,
                     onSwitchClick = {
-                        Log.d("TAG", "onCreate clicked")
+
                     }
                 )
             }
