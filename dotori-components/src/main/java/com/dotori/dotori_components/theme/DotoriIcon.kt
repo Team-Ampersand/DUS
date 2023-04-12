@@ -318,3 +318,29 @@ fun XSmallIcon(
         tint = tint
     )
 }
+
+@Composable
+fun LightSwitchIcon(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified
+) {
+    Icon(painter = painterResource(id = R.drawable.light_icon),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
+@Composable
+fun DarkSwitchIcon(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified
+) {
+    Icon(painter = painterResource(id = R.drawable.dark_icon),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
