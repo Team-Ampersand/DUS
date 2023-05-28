@@ -20,14 +20,12 @@ import com.dotori.dotori_components.theme.LightSwitchIcon
 @Composable
 fun DotoriThemeSwitchButton(
     modifier: Modifier,
-    switchPadding: Dp = 5.dp,
     isChecked: Boolean = false,
-    lightIcon: @Composable () -> Unit = { LightSwitchIcon(contentDescription = "light switch") },
-    darkIcon: @Composable () -> Unit = { DarkSwitchIcon(contentDescription = "dark switch") },
     onSwitchClick: (Boolean) -> Unit
 ) {
     val buttonWidth: Dp = 70.dp
     val buttonHeight: Dp = 40.dp
+    val switchPadding: Dp = 5.dp
 
     val switchSize by remember { mutableStateOf(buttonHeight-switchPadding*2) } // 버튼의 width 크기
     val interactionSource = remember { MutableInteractionSource() }
@@ -75,8 +73,8 @@ fun DotoriThemeSwitchButton(
                 )
 
                 Box {
-                    if (switchClicked) darkIcon()
-                    else lightIcon()
+                    if (switchClicked) DarkSwitchIcon(contentDescription = "dark switch")
+                    else LightSwitchIcon(contentDescription = "light switch")
                 }
             }
         }
