@@ -55,6 +55,7 @@ dependencies {
     implementation(project(ProjectProperties.projectPath))
 
     implementation(AndroidX.CORE_KTX)
+    implementation(AndroidX.APP_COMPAT)
     implementation(AndroidX.LIFECYCLE_KTX)
     implementation(Compose.ACTIVITY_COMPOSE)
     implementation(Compose.NAVIGATION_COMPOSE)
