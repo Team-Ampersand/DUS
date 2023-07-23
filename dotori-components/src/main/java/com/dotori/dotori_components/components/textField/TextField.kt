@@ -20,10 +20,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.utils.Types
 import com.dotori.dotori_components.theme.*
-import com.dotori.dotori_components.theme.DotoriColor.Natural30
-import com.dotori.dotori_components.theme.DotoriColor.Natural50
-import com.dotori.dotori_components.theme.DotoriColor.Neutral10
-import com.dotori.dotori_components.theme.DotoriColor.Primary10
 
 @Composable
 fun DotoriTextField(
@@ -32,8 +28,8 @@ fun DotoriTextField(
     value: String,
     singleLine: Boolean = true,
     maxLines: Int = 1,
-    textStyle: TextStyle = DotoriTypography.body,
-    focusColor: Color = Primary10,
+    textStyle: TextStyle = DotoriTheme.typography.body,
+    focusColor: Color = DotoriTheme.colors.primary10,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     placeholder: String,
     leadingIcon: @Composable ((Color) -> Unit)? = null,
@@ -42,11 +38,11 @@ fun DotoriTextField(
 ) {
     val focusRequester by remember { mutableStateOf(FocusRequester()) }
     var isFocus by remember { mutableStateOf(false) }
-    val textColor = Neutral10
-    val backgroundColor = Natural50
-    val iconColor = Neutral10
+    val textColor = DotoriTheme.colors.neutral10
+    val backgroundColor = DotoriTheme.colors.neutral50
+    val iconColor = DotoriTheme.colors.neutral10
     val mergedTextStyle = textStyle.merge(TextStyle(color = textColor))
-    val placeholderColor = Natural30
+    val placeholderColor = DotoriTheme.colors.neutral30
     val unFocusColor = backgroundColor
 
     Row(

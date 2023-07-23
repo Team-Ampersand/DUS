@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.dotori.dotori_components.theme.DotoriColor.CardBackGround
+import com.dotori.dotori_components.theme.DotoriTheme
 
 @Composable
 fun DotoriDialog(
@@ -17,7 +17,7 @@ fun DotoriDialog(
     onDismiss: () -> Unit,
     content: @Composable BoxScope.() -> Unit,
 ) {
-    val color = CardBackGround
+    val color = DotoriTheme.colors.cardBackground
 
     Dialog(
         onDismissRequest = { onDismiss() }
