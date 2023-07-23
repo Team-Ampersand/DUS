@@ -30,7 +30,7 @@ fun DotoriButton(
             modifier = modifier,
             border = BorderStroke(1.dp, Color(0xFFBBBBCC)),
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = DotoriButtonColor.Transparent,
+                backgroundColor = DotoriButtonColor.ColorTransparent,
                 contentColor = DotoriButtonContentColor.ButtonContentGray
             ),
             shape = RoundedCornerShape(8.dp)
@@ -45,7 +45,7 @@ fun DotoriButton(
                 backgroundColor = when (colors) {
                     Types.ButtonType.LIGHTBLUE -> DotoriButtonColor.LightBlue
                     Types.ButtonType.BLUE -> DotoriButtonColor.Blue
-                    else -> DotoriButtonColor.Transparent
+                    else -> DotoriButtonColor.ColorTransparent
                 },
                 contentColor = DotoriButtonContentColor.ButtonContentWhite
             ),
