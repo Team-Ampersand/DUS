@@ -51,10 +51,8 @@ fun DotoriThemeSwitchButton(
         )
     )
 
-    // 버튼 영역
     Box(modifier = modifier) {
         Box(
-            // 기본적인 modifier 속성
             modifier = Modifier
                 .width(buttonWidth)
                 .height(buttonHeight)
