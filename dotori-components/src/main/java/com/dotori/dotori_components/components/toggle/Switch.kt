@@ -29,7 +29,7 @@ import com.dotori.dotori_components.theme.LightSwitchIcon
 
 @Composable
 fun DotoriThemeSwitchButton(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     isDark: Boolean = false,
     onSwitchClick: (Boolean) -> Unit
 ) {
