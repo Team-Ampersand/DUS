@@ -1,6 +1,7 @@
 package com.dotori.dotori_components.theme
 
 import androidx.compose.runtime.Stable
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -94,3 +95,5 @@ object DotoriTypography {
         fontWeight = FontWeight.Medium
     )
 }
+
+internal val LocalTypography = staticCompositionLocalOf { DotoriTypography }

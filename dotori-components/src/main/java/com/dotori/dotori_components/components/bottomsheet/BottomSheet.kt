@@ -9,7 +9,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.unit.dp
-import com.dotori.dotori_components.theme.DotoriColor.CardBackGround
+import com.dotori.dotori_components.theme.DotoriTheme
 
 @Composable
 fun DotoriBottomSheet(
@@ -18,7 +18,7 @@ fun DotoriBottomSheet(
     sheetContent: @Composable () -> Unit,
     content: @Composable () -> Unit
 ) {
-    val sheetBackgroundColor = CardBackGround
+    val sheetBackgroundColor = DotoriTheme.colors.cardBackground
 
     Box(modifier) {
         DotoriBottomSheetStack(
