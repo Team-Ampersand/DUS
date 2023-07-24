@@ -22,13 +22,13 @@ fun ArrowLeftIcon(
 }
 
 @Composable
-fun BIcon(
+fun ListIcon(
     contentDescription: String?,
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
     Icon(
-        painter = painterResource(id = R.drawable.b),
+        painter = painterResource(id = R.drawable.list),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
