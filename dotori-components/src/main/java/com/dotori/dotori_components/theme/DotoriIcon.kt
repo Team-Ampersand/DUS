@@ -13,7 +13,8 @@ fun ArrowLeftIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.arrow_left),
+    Icon(
+        painter = painterResource(id = R.drawable.arrow_left),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -21,12 +22,13 @@ fun ArrowLeftIcon(
 }
 
 @Composable
-fun BIcon(
+fun ListIcon(
     contentDescription: String?,
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.b),
+    Icon(
+        painter = painterResource(id = R.drawable.list),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -39,7 +41,8 @@ fun CalendarIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.calendar),
+    Icon(
+        painter = painterResource(id = R.drawable.calendar),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -52,7 +55,8 @@ fun DownloadIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.download),
+    Icon(
+        painter = painterResource(id = R.drawable.download),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -65,7 +69,8 @@ fun ExclamationMarkIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.exclamation_mark),
+    Icon(
+        painter = painterResource(id = R.drawable.exclamation_mark),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -78,7 +83,8 @@ fun EyeCloseIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.eye_close),
+    Icon(
+        painter = painterResource(id = R.drawable.eye_close),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -91,7 +97,8 @@ fun EyeOpenIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.eye_open),
+    Icon(
+        painter = painterResource(id = R.drawable.eye_open),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -104,7 +111,8 @@ fun FemaleIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.female),
+    Icon(
+        painter = painterResource(id = R.drawable.female),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -117,7 +125,8 @@ fun FilterIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.filter),
+    Icon(
+        painter = painterResource(id = R.drawable.filter),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -130,7 +139,8 @@ fun HamburgerIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.hamburger),
+    Icon(
+        painter = painterResource(id = R.drawable.hamburger),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -143,7 +153,8 @@ fun LockIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.lock),
+    Icon(
+        painter = painterResource(id = R.drawable.lock),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -156,7 +167,8 @@ fun Logout(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.logout),
+    Icon(
+        painter = painterResource(id = R.drawable.logout),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -169,7 +181,8 @@ fun MaleIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.male),
+    Icon(
+        painter = painterResource(id = R.drawable.male),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -182,7 +195,8 @@ fun MeatballIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.meatball),
+    Icon(
+        painter = painterResource(id = R.drawable.meatball),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -195,7 +209,8 @@ fun PenIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.pen),
+    Icon(
+        painter = painterResource(id = R.drawable.pen),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -208,7 +223,8 @@ fun PersonIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.person),
+    Icon(
+        painter = painterResource(id = R.drawable.person),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -221,7 +237,8 @@ fun PlusIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.plus),
+    Icon(
+        painter = painterResource(id = R.drawable.plus),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -234,7 +251,8 @@ fun SearchIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.search),
+    Icon(
+        painter = painterResource(id = R.drawable.search),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -247,7 +265,8 @@ fun ShortcutsIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.shortcuts),
+    Icon(
+        painter = painterResource(id = R.drawable.shortcuts),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -260,7 +279,8 @@ fun TrashCanIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.trash_can),
+    Icon(
+        painter = painterResource(id = R.drawable.trash_can),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -273,7 +293,8 @@ fun WarningIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.warning),
+    Icon(
+        painter = painterResource(id = R.drawable.warning),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -286,7 +307,8 @@ fun XMarkIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.x_mark),
+    Icon(
+        painter = painterResource(id = R.drawable.x_mark),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -299,7 +321,8 @@ fun XMarkIcon2(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.x_mark2),
+    Icon(
+        painter = painterResource(id = R.drawable.x_mark2),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
@@ -312,7 +335,36 @@ fun XSmallIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified
 ) {
-    Icon(painter = painterResource(id = R.drawable.x_small),
+    Icon(
+        painter = painterResource(id = R.drawable.x_small),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
+@Composable
+fun LightSwitchIcon(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.light_icon),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
+@Composable
+fun DarkSwitchIcon(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.dark_icon),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
