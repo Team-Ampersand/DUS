@@ -1,7 +1,15 @@
 package com.dotori.dotori_components.components.card
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -10,9 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.utils.Theme
 import com.dotori.dotori_components.components.utils.Types
@@ -25,8 +31,6 @@ import com.example.dus.R
 fun DotoriCard(
     modifier: Modifier = Modifier,
     background: Color = DotoriTheme.colors.cardBackground,
-    shape: Shape = RoundedCornerShape(16.dp),
-    elevation: Dp = 24.dp,
     name: String,
     gender: String,
     studentNumber: String,
@@ -41,8 +45,8 @@ fun DotoriCard(
                 .aspectRatio(80 / 43f)
                 .padding(20.dp),
             color = background,
-            shape = shape,
-            elevation = elevation
+            shape = RoundedCornerShape(16.dp),
+            elevation = 24.dp
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
                 Row(modifier = Modifier.padding(top = 12.dp, start = 12.dp, end = 16.dp)) {
