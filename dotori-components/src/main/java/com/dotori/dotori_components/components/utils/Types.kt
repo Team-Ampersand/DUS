@@ -16,6 +16,11 @@ object Types {
         LIGHT,
         DARK
     }
+
+    enum class CardType {
+        SELF_STUDY,
+        MASSAGE_CHAIR
+    }
 }
 
 enum class Theme {
