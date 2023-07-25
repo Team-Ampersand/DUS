@@ -63,8 +63,7 @@ fun DotoriCard(
                 ) {
                     Image(
                         painter = if (DotoriTheme.dotoriTheme == Theme.LIGHT) painterResource(id = R.drawable.profile_light)
-                        else painterResource(id = R.drawable.profile_dark
-                        ),
+                        else painterResource(id = R.drawable.profile_dark),
                         contentDescription = "profile image"
                     )
 
