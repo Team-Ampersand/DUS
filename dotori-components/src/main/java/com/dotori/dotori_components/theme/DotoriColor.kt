@@ -130,14 +130,3 @@ class DotoriColors(
         subRed = subRed
     )
 }
-
-object DotoriButtonColor {
-    val LightBlue = Primary30Light
-    val Blue = Primary10Light
-    val ColorTransparent = Transparent
-}
-
-object DotoriButtonContentColor {
-    val ButtonContentWhite = White
-    val ButtonContentGray = Neutral20Light
-}
