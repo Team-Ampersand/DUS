@@ -31,7 +31,7 @@ fun DotoriButton(
         OutlinedButton(
             onClick = onClick,
             modifier = modifier,
-            border = BorderStroke(1.dp, Color(0xFFBBBBCC)),
+            border = BorderStroke(1.dp, DotoriTheme.colors.neutral30),
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Transparent,
                 contentColor = DotoriTheme.colors.neutral20
