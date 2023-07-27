@@ -28,7 +28,7 @@ import com.dotori.dotori_components.theme.MaleIcon
 import com.example.dus.R
 
 @Composable
-fun DotoriCard(
+fun DotoriStudentCard(
     modifier: Modifier = Modifier,
     background: Color = DotoriTheme.colors.cardBackground,
     name: String,
@@ -46,7 +46,7 @@ fun DotoriCard(
                 .padding(20.dp),
             color = background,
             shape = RoundedCornerShape(16.dp),
-            elevation = 24.dp
+            elevation = 8.dp
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
                 Row(modifier = Modifier.padding(top = 12.dp, start = 12.dp, end = 16.dp)) {
