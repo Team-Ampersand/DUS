@@ -75,8 +75,8 @@ fun DotoriMainCard(
 
             val progress = count.toFloat() / limit.toFloat()    // 진행도
             val progressColor =
-                if (progress < 0.34f) DotoriTheme.colors.subGreen
-                else if (progress < 0.67f) DotoriTheme.colors.subYellow
+                if (progress <= 0.5f) DotoriTheme.colors.subGreen
+                else if (progress <= 0.8f) DotoriTheme.colors.subYellow
                 else DotoriTheme.colors.subRed
 
             LinearProgressIndicator(
