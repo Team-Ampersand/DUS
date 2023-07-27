@@ -8,6 +8,34 @@ import androidx.compose.ui.res.painterResource
 import com.example.dus.R
 
 @Composable
+fun ArrowRightIcon(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.arrow_right),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
+@Composable
+fun ArrowDownIcon(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.arrow_down),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
+@Composable
 fun ArrowLeftIcon(
     contentDescription: String?,
     modifier: Modifier = Modifier,
@@ -15,6 +43,20 @@ fun ArrowLeftIcon(
 ) {
     Icon(
         painter = painterResource(id = R.drawable.arrow_left),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
+@Composable
+fun ArrowLeft2Icon(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.arrow_left2),
         contentDescription = contentDescription,
         modifier = modifier,
         tint = tint
