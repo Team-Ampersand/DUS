@@ -11,68 +11,76 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.utils.Types
-import com.dotori.dotori_components.theme.DotoriButtonColor
-import com.dotori.dotori_components.theme.DotoriButtonContentColor
+import com.dotori.dotori_components.theme.DotoriTheme
+import com.dotori.dotori_components.theme.Transparent
+import com.dotori.dotori_components.theme.White
 
 @Composable
 fun DotoriButton(
-    onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    colors: Types.ButtonType,
-    text: String
+    text: String,
+    colors: Color = DotoriTheme.colors.primary10,
+    style: TextStyle = DotoriTheme.typography.smallTitle,
+    onClick: () -> Unit
 ) {
-    if (colors == Types.ButtonType.TRANSPARENT) {
+    if (colors == Transparent) {
         OutlinedButton(
             onClick = onClick,
             modifier = modifier,
             border = BorderStroke(1.dp, Color(0xFFBBBBCC)),
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = DotoriButtonColor.ColorTransparent,
-                contentColor = DotoriButtonContentColor.ButtonContentGray
+                backgroundColor = Transparent,
+                contentColor = DotoriTheme.colors.neutral20
             ),
             shape = RoundedCornerShape(8.dp)
         ) {
-            Text(text = text, modifier = Modifier.padding(horizontal = 15.dp))
+            Text(
+                modifier = Modifier.padding(horizontal = 15.dp),
+                text = text,
+                style = style
+            )
         }
     } else {
         Button(
             onClick = onClick,
             modifier = modifier,
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = when (colors) {
-                    Types.ButtonType.LIGHTBLUE -> DotoriButtonColor.LightBlue
-                    Types.ButtonType.BLUE -> DotoriButtonColor.Blue
-                    else -> DotoriButtonColor.ColorTransparent
-                },
-                contentColor = DotoriButtonContentColor.ButtonContentWhite
+                backgroundColor = colors,
+                contentColor = White
             ),
             shape = RoundedCornerShape(8.dp)
         ) {
-            Text(text = text, modifier = Modifier.padding(horizontal = 15.dp))
+            Text(
+                modifier = Modifier.padding(horizontal = 15.dp),
+                text = text,
+                style = style
+            )
         }
     }
 }
 
 @Composable
 fun DotoriLongButton(
-    onClick: () -> Unit,
-    colors: Types.LongButtonType,
     text: String,
-    horizontalPaddingValue: Dp = 10.dp
+    colors: Types.LongButtonType,
+    horizontalPaddingValue: Dp = 10.dp,
+    onClick: () -> Unit
 ) {
     Button(
         onClick = onClick,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(start = horizontalPaddingValue, end = horizontalPaddingValue),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = when (colors) {
-                Types.LongButtonType.BLUE -> DotoriButtonColor.Blue
-                Types.LongButtonType.LIGHTBLUE -> DotoriButtonColor.LightBlue
+                Types.LongButtonType.BLUE -> DotoriTheme.colors.primary10
+                Types.LongButtonType.LIGHTBLUE -> DotoriTheme.colors.primary30
             },
-            contentColor = DotoriButtonContentColor.ButtonContentWhite
+            contentColor = White
         ),
         shape = RoundedCornerShape(8.dp),
     ) {
