@@ -47,7 +47,7 @@ fun DotoriMainCard(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(modifier = Modifier.padding(bottom = 16.dp)) {
-                val titleText = if (mode.checkMode() == "자습") "자습신청" else "안마의자"
+                val titleText = mode.checkTitle()
                 Text(
                     text = titleText,
                     style = DotoriTheme.typography.subTitle2,
@@ -109,5 +109,12 @@ fun Types.CardType.checkMode(): String {
     return when (this) {
         Types.CardType.SELF_STUDY -> "자습"
         Types.CardType.MASSAGE_CHAIR -> "안마"
+    }
+}
+
+fun Types.CardType.checkTitle(): String {
+    return when (this) {
+        Types.CardType.SELF_STUDY -> "자습신청"
+        Types.CardType.MASSAGE_CHAIR -> "안마의자"
     }
 }
