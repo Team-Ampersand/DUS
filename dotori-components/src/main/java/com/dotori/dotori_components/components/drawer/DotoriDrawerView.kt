@@ -53,9 +53,8 @@ fun DotoriDrawerView(
             }
         }, content = {
             content(openDrawer = openDrawer)
-        })
-
-
+        }
+    )
 }
 
 @Preview

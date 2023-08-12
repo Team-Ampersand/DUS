@@ -30,7 +30,8 @@ private fun DrawerBodyPre() {
         DrawerItemData(
             title = "학생 정보",
             icon = Icons.Person,
-            onClick = {}),
+            onClick = {}
+        ),
         DrawerItemData(
             title = "규정 위반",
             icon = Icons.Violation,
