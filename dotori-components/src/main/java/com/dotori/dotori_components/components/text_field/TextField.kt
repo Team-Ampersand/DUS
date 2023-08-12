@@ -1,4 +1,4 @@
-package com.dotori.dotori_components.components.textField
+package com.dotori.dotori_components.components.text_field
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
