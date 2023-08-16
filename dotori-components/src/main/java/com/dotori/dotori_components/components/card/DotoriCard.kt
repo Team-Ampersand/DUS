@@ -66,8 +66,8 @@ fun DotoriStudentCard(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Image(
-                        painter = if (DotoriTheme.dotoriTheme == Theme.LIGHT) painterResource(id = R.drawable.profile_light)
-                        else painterResource(id = R.drawable.profile_dark),
+                        painter = if (DotoriTheme.dotoriTheme == Theme.LIGHT) painterResource(id = R.drawable.ic_profile_light)
+                        else painterResource(id = R.drawable.ic_profile_dark),
                         contentDescription = "profile image"
                     )
 
@@ -105,14 +105,14 @@ fun DotoriStudentCard(
             Types.CardType.SELF_STUDY -> {
                 if (position <= 3) {
                     when (position) {
-                        1 -> CardStatusImage(drawableId = R.drawable.gold_medal)
-                        2 -> CardStatusImage(drawableId = R.drawable.silver_medal)
-                        3 -> CardStatusImage(drawableId = R.drawable.bronze_medal)
+                        1 -> CardStatusImage(drawableId = R.drawable.ic_gold_medal)
+                        2 -> CardStatusImage(drawableId = R.drawable.ic_silver_medal)
+                        3 -> CardStatusImage(drawableId = R.drawable.ic_bronze_medal)
                     }
-                } else if (isLast) CardLastNumberImage(drawableId = R.drawable.last_student_image)
+                } else if (isLast) CardLastNumberImage(drawableId = R.drawable.ic_last_student)
             }
             Types.CardType.MASSAGE_CHAIR-> {
-                if (isLast && position > 3) CardLastNumberImage(drawableId = R.drawable.last_student_image)
+                if (isLast && position > 3) CardLastNumberImage(drawableId = R.drawable.ic_last_student)
             }
         }
     }
