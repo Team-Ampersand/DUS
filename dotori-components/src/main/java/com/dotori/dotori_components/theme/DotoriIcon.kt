@@ -422,6 +422,20 @@ fun DarkSwitchIcon(
 }
 
 @Composable
+fun CheckIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    contentDescription: String?
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(id = R.drawable.ic_check),
+        tint = tint,
+        contentDescription = contentDescription
+    )
+}
+
+@Composable
 fun DotoriLogoIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
