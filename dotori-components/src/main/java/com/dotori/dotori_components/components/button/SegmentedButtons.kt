@@ -1,5 +1,8 @@
 package com.dotori.dotori_components.components.button
 
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -52,7 +55,8 @@ fun DotoriSegmentedButtons(
                             .fillMaxHeight()
                             .weight(1f)
                             .background(
-                                color = if (selectedButtonIndex == index) DotoriTheme.colors.cardBackground else DotoriTheme.colors.neutral50,
+//                                color = if (selectedButtonIndex == index) DotoriTheme.colors.cardBackground else DotoriTheme.colors.neutral50,
+                                color = backgroundColor(selectedButtonIndex = selectedButtonIndex, index = index),
                                 shape = RoundedCornerShape(innerRoundedCornerShape)
                             )
                             .clickable(
@@ -76,6 +80,16 @@ fun DotoriSegmentedButtons(
         }
     }
 }
+
+@Composable
+fun backgroundColor(
+    selectedButtonIndex: Int,
+    index: Int
+) = animateColorAsState(
+        targetValue = if (selectedButtonIndex == index) DotoriTheme.colors.cardBackground else DotoriTheme.colors.neutral50,
+        animationSpec = tween(easing = LinearOutSlowInEasing)
+    ).value
+
 
 @Preview
 @Composable
