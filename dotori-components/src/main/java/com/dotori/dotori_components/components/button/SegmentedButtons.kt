@@ -32,11 +32,11 @@ import com.dotori.dotori_components.theme.DotoriTheme
 @Composable
 fun DotoriSegmentedButtons(
     modifier: Modifier = Modifier,
+    sectionNames: List<String>,
     rowPadding: Dp,
     textPadding: Dp,
     outRoundedCornerShape: Dp,
     innerRoundedCornerShape: Dp,
-    list: List<String>,
     onSwitchClick: () -> Unit
 ) {
     var selectedButtonIndex by remember { mutableStateOf(0) }
@@ -48,7 +48,7 @@ fun DotoriSegmentedButtons(
         ),
     ) {
         Row(modifier = Modifier.padding(rowPadding)) {
-            list.forEachIndexed { index, text ->
+            sectionNames.forEachIndexed { index, text ->
                 Box(
                     modifier = Modifier
                         .fillMaxHeight()
@@ -110,7 +110,7 @@ fun preview() {
             rowPadding = 6.dp,
             outRoundedCornerShape = 8.dp,
             innerRoundedCornerShape = 4.dp,
-            list = list,
+            sectionNames = list,
             onSwitchClick = {}
         )
         Spacer(modifier = Modifier.height(20.dp))
@@ -122,7 +122,7 @@ fun preview() {
             rowPadding = 4.dp,
             outRoundedCornerShape = 4.dp,
             innerRoundedCornerShape = 8.dp,
-            list = list1,
+            sectionNames = list1,
             onSwitchClick = {}
         )
     }
