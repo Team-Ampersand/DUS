@@ -34,7 +34,7 @@ fun DotoriSegmentedButtons(
     outRoundedCornerShape: Dp,
     innerRoundedCornerShape: Dp,
     list: List<String>,
-    onSwitchClick: (Int) -> Unit
+    onSwitchClick: () -> Unit
 ) {
     var selectedButtonIndex by remember { mutableStateOf(0) }
 
@@ -60,7 +60,7 @@ fun DotoriSegmentedButtons(
                                 indication = null
                             ) {
                                 selectedButtonIndex = index
-                                onSwitchClick(index)
+                                onSwitchClick()
                             },
                         contentAlignment = Alignment.Center
                     ) {
