@@ -55,7 +55,6 @@ fun DotoriSegmentedButtons(
                             .fillMaxHeight()
                             .weight(1f)
                             .background(
-//                                color = if (selectedButtonIndex == index) DotoriTheme.colors.cardBackground else DotoriTheme.colors.neutral50,
                                 color = backgroundColor(selectedButtonIndex = selectedButtonIndex, index = index),
                                 shape = RoundedCornerShape(innerRoundedCornerShape)
                             )
