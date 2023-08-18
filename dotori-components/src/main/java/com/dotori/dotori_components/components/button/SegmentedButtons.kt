@@ -41,39 +41,40 @@ fun DotoriSegmentedButtons(
 ) {
     var selectedButtonIndex by remember { mutableStateOf(0) }
 
-    Box(modifier = modifier) {
-        Box(
-            modifier = Modifier.background(
-                color = DotoriTheme.colors.neutral50,
-                shape = RoundedCornerShape(outRoundedCornerShape)
-            ),
-        ) {
-            Row(modifier = Modifier.padding(rowPadding)) {
-                list.forEachIndexed { index, text ->
-                    Box(
-                        modifier = Modifier
-                            .fillMaxHeight()
-                            .weight(1f)
-                            .background(
-                                color = backgroundColor(selectedButtonIndex = selectedButtonIndex, index = index),
-                                shape = RoundedCornerShape(innerRoundedCornerShape)
-                            )
-                            .clickable(
-                                interactionSource = MutableInteractionSource(),
-                                indication = null
-                            ) {
-                                selectedButtonIndex = index
-                                onSwitchClick()
-                            },
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            modifier = Modifier.padding(horizontal = textPadding),
-                            text = text,
-                            style = DotoriTheme.typography.subTitle2,
-                            color = DotoriTheme.colors.neutral10
+    Box(
+        modifier = modifier.background(
+            color = DotoriTheme.colors.neutral50,
+            shape = RoundedCornerShape(outRoundedCornerShape)
+        ),
+    ) {
+        Row(modifier = Modifier.padding(rowPadding)) {
+            list.forEachIndexed { index, text ->
+                Box(
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .weight(1f)
+                        .background(
+                            color = backgroundColor(
+                                selectedButtonIndex = selectedButtonIndex,
+                                index = index
+                            ),
+                            shape = RoundedCornerShape(innerRoundedCornerShape)
                         )
-                    }
+                        .clickable(
+                            interactionSource = MutableInteractionSource(),
+                            indication = null
+                        ) {
+                            selectedButtonIndex = index
+                            onSwitchClick()
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        modifier = Modifier.padding(horizontal = textPadding),
+                        text = text,
+                        style = DotoriTheme.typography.subTitle2,
+                        color = DotoriTheme.colors.neutral10
+                    )
                 }
             }
         }
@@ -85,9 +86,9 @@ fun backgroundColor(
     selectedButtonIndex: Int,
     index: Int
 ) = animateColorAsState(
-        targetValue = if (selectedButtonIndex == index) DotoriTheme.colors.cardBackground else DotoriTheme.colors.neutral50,
-        animationSpec = tween(easing = LinearOutSlowInEasing)
-    ).value
+    targetValue = if (selectedButtonIndex == index) DotoriTheme.colors.cardBackground else DotoriTheme.colors.neutral50,
+    animationSpec = tween(easing = LinearOutSlowInEasing)
+).value
 
 
 @Preview
@@ -109,7 +110,7 @@ fun preview() {
             rowPadding = 6.dp,
             outRoundedCornerShape = 8.dp,
             innerRoundedCornerShape = 4.dp,
-            list = list1,
+            list = list,
             onSwitchClick = {}
         )
         Spacer(modifier = Modifier.height(20.dp))
@@ -117,11 +118,11 @@ fun preview() {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp),
-            textPadding = 10.dp,
-            rowPadding = 6.dp,
-            outRoundedCornerShape = 8.dp,
-            innerRoundedCornerShape = 4.dp,
-            list = list,
+            textPadding = 13.dp,
+            rowPadding = 4.dp,
+            outRoundedCornerShape = 4.dp,
+            innerRoundedCornerShape = 8.dp,
+            list = list1,
             onSwitchClick = {}
         )
     }
