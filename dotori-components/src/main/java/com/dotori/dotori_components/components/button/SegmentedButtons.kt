@@ -93,7 +93,7 @@ fun backgroundColor(
 
 @Preview
 @Composable
-fun preview() {
+fun DotoriSegmentedButtonsPreview() {
     var list = mutableListOf("남", "여")
     var list1 = mutableListOf("아침", "점심", "저녁")
     Column(
