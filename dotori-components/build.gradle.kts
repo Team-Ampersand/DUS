@@ -48,6 +48,7 @@ dependencies {
     implementation(Compose.FOUNDATION)
 
     implementation(Compose.MATERIAL_COMPOSE)
+    implementation(Compose.MATERIAL3_COMPOSE)
 
     implementation(AndroidX.APP_COMPAT)
     implementation(Compose.UI_TOOLING_PREVIEW)
