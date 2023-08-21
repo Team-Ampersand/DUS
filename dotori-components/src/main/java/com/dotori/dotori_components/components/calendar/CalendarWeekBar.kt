@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.theme.DotoriTheme
 
-private val dayOfWeeks = listOf("월", "화", "수", "목", "금", "토", "일")
+private val dayOfWeeks = listOf("일", "월", "화", "수", "목", "금", "토")
 
 @Composable
 fun CalendarWeekBar(
