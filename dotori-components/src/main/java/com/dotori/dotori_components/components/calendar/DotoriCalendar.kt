@@ -22,9 +22,7 @@ import com.dotori.dotori_components.theme.DotoriTheme
 import java.time.LocalDate
 
 @Composable
-fun DotoriCalendar(
-    modifier: Modifier = Modifier,
-) {
+fun DotoriCalendar(modifier: Modifier = Modifier) {
     var selectedDay by remember { mutableStateOf(LocalDate.now()) }
 
     Column(

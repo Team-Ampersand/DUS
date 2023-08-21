@@ -16,9 +16,7 @@ import com.dotori.dotori_components.theme.DotoriTheme
 private val dayOfWeeks = listOf("일", "월", "화", "수", "목", "금", "토")
 
 @Composable
-fun CalendarWeekBar(
-    modifier: Modifier = Modifier
-) {
+fun CalendarWeekBar(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier.background(color = DotoriTheme.colors.cardBackground),
         horizontalArrangement = Arrangement.spacedBy(6.dp),
