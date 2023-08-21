@@ -25,6 +25,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.dotori.dotori_components.theme.Black
 import com.dotori.dotori_components.theme.DotoriTheme
 import com.dotori.dotori_components.theme.White
 
@@ -81,7 +82,7 @@ fun DotoriSwitchButton(
             Box(
                 modifier = Modifier.size(24.dp)
                     .clip(CircleShape)
-                    .background(White),
+                    .background(if (DotoriTheme.isSystemIsDarkTheme()) Black else White),
             )
         }
     }
