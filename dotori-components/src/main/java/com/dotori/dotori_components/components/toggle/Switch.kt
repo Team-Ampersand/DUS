@@ -32,13 +32,12 @@ import com.dotori.dotori_components.theme.White
 @Composable
 fun DotoriSwitchButton(
     modifier: Modifier = Modifier,
+    buttonWidth: Dp = 56.dp,
+    buttonHeight: Dp = 32.dp,
+    switchPadding: Dp = 4.dp,
     checked: Boolean = false,
     onCheckedChange: (Boolean) -> Unit
 ) {
-    val buttonWidth: Dp = 56.dp
-    val buttonHeight: Dp = 32.dp
-    val switchPadding: Dp = 4.dp
-
     val switchSize by remember { mutableStateOf(buttonHeight-switchPadding*2) }
     val interactionSource = remember { MutableInteractionSource() }
     var switchChecked by remember { mutableStateOf(checked) }
