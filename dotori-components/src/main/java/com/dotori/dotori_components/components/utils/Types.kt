@@ -24,8 +24,8 @@ object Types {
 }
 
 enum class GenderType {
-    MALE,
-    FEMALE
+    MAN,
+    WOMAN
 }
 
 enum class Theme {
