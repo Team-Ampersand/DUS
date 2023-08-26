@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.dotori.dotori_components.components.utils.GenderType
 import com.dotori.dotori_components.components.utils.Theme
 import com.dotori.dotori_components.components.utils.Types
 import com.dotori.dotori_components.theme.DotoriTheme
@@ -32,7 +33,7 @@ fun DotoriStudentCard(
     modifier: Modifier = Modifier,
     background: Color = DotoriTheme.colors.cardBackground,
     name: String,
-    gender: String,
+    gender: GenderType,
     studentNumber: String,
     position: Int,
     mode: Types.CardType,
@@ -81,14 +82,16 @@ fun DotoriStudentCard(
                             color = DotoriTheme.colors.neutral10
                         )
 
-                        if (gender == "MAN") MaleIcon(
-                            contentDescription = "male icon",
-                            tint = DotoriTheme.colors.neutral10
-                        )
-                        else FemaleIcon(
-                            contentDescription = "female icon",
-                            tint = DotoriTheme.colors.neutral10
-                        )
+                        when (gender) {
+                            GenderType.MALE -> MaleIcon(
+                                contentDescription = "male icon",
+                                tint = DotoriTheme.colors.neutral10
+                            )
+                            GenderType.FEMALE -> FemaleIcon(
+                                contentDescription = "female icon",
+                                tint = DotoriTheme.colors.neutral10
+                            )
+                        }
                     }
 
                     Text(
