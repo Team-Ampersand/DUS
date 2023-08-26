@@ -23,6 +23,11 @@ object Types {
     }
 }
 
+enum class GenderType {
+    MALE,
+    FEMALE
+}
+
 enum class Theme {
     LIGHT,
     DARK
