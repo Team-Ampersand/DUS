@@ -23,6 +23,13 @@ object Types {
     }
 }
 
+enum class RoleType {
+    ROLE_DEVELOPER,
+    ROLE_COUNCILLOR,
+    ROLE_ADMIN,
+    ROLE_MEMBER
+}
+
 enum class GenderType {
     MAN,
     WOMAN
