@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.checkbox.DotoriCheckBox
 import com.dotori.dotori_components.components.utils.GenderType
+import com.dotori.dotori_components.components.utils.RoleType
 import com.dotori.dotori_components.components.utils.Theme
 import com.dotori.dotori_components.components.utils.Types
 import com.dotori.dotori_components.theme.DotoriTheme
@@ -42,7 +43,7 @@ fun DotoriStudentCard(
     modifier: Modifier = Modifier,
     background: Color = DotoriTheme.colors.cardBackground,
     name: String,
-    gender: GenderType,
+    gender: String,
     role: String,
     studentNumber: String,
     position: Int,
@@ -70,7 +71,7 @@ fun DotoriStudentCard(
 
                     Spacer(modifier = Modifier.weight(1f))
 
-                    if (role != "ROLE_MEMBER") DotoriCheckBox(onCheckedChange = onCheckBoxChange)
+                    if (role != RoleType.ROLE_MEMBER.toString()) DotoriCheckBox(onCheckedChange = onCheckBoxChange)
                 }
 
                 Column(
@@ -93,16 +94,18 @@ fun DotoriStudentCard(
                             color = DotoriTheme.colors.neutral10
                         )
 
-                        when (gender) {
-                            GenderType.MAN -> MaleIcon(
+                        if (gender == GenderType.MAN.toString()) {
+                            MaleIcon(
                                 contentDescription = "male icon",
                                 tint = DotoriTheme.colors.neutral10
                             )
-                            GenderType.WOMAN -> FemaleIcon(
+                        } else {
+                            FemaleIcon(
                                 contentDescription = "female icon",
                                 tint = DotoriTheme.colors.neutral10
                             )
                         }
+
                     }
 
                     Text(
@@ -166,7 +169,7 @@ fun DotoriStudentCardPreview() {
         items(list) { position ->
             DotoriStudentCard(
                 name = "임가람",
-                gender = GenderType.MAN,
+                gender = "MAN",
                 role = "ROLE_MEMBER",
                 studentNumber = "3412",
                 position = position,
