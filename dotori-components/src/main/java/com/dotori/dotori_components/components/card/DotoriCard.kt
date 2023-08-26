@@ -43,6 +43,7 @@ fun DotoriStudentCard(
     background: Color = DotoriTheme.colors.cardBackground,
     name: String,
     gender: GenderType,
+    role: String,
     studentNumber: String,
     position: Int,
     mode: Types.CardType,
@@ -69,7 +70,7 @@ fun DotoriStudentCard(
 
                     Spacer(modifier = Modifier.weight(1f))
 
-                    DotoriCheckBox(onCheckedChange = onCheckBoxChange)
+                    if (role != "ROLE_MEMBER") DotoriCheckBox(onCheckedChange = onCheckBoxChange)
                 }
 
                 Column(
@@ -93,11 +94,11 @@ fun DotoriStudentCard(
                         )
 
                         when (gender) {
-                            GenderType.MALE -> MaleIcon(
+                            GenderType.MAN -> MaleIcon(
                                 contentDescription = "male icon",
                                 tint = DotoriTheme.colors.neutral10
                             )
-                            GenderType.FEMALE -> FemaleIcon(
+                            GenderType.WOMAN -> FemaleIcon(
                                 contentDescription = "female icon",
                                 tint = DotoriTheme.colors.neutral10
                             )
@@ -164,9 +165,10 @@ fun DotoriStudentCardPreview() {
     ) {
         items(list) { position ->
             DotoriStudentCard(
-                name = "name",
-                gender = GenderType.MALE,
-                studentNumber = "12",
+                name = "임가람",
+                gender = GenderType.MAN,
+                role = "ROLE_MEMBER",
+                studentNumber = "3412",
                 position = position,
                 mode = Types.CardType.SELF_STUDY,
                 isLast = list.lastIndex + 1 == position,
