@@ -4,22 +4,33 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.dotori.dotori_components.components.checkbox.DotoriCheckBox
+import com.dotori.dotori_components.components.utils.GenderType
+import com.dotori.dotori_components.components.utils.RoleType
 import com.dotori.dotori_components.components.utils.Theme
 import com.dotori.dotori_components.components.utils.Types
 import com.dotori.dotori_components.theme.DotoriTheme
@@ -33,10 +44,12 @@ fun DotoriStudentCard(
     background: Color = DotoriTheme.colors.cardBackground,
     name: String,
     gender: String,
+    role: String,
     studentNumber: String,
     position: Int,
     mode: Types.CardType,
-    isLast: Boolean
+    isLast: Boolean,
+    onCheckBoxChange: (Boolean) -> Unit
 ) {
     Box(modifier = modifier.fillMaxWidth()) {
         Surface(
@@ -58,7 +71,7 @@ fun DotoriStudentCard(
 
                     Spacer(modifier = Modifier.weight(1f))
 
-                    //  todo :: checkbox component 추가
+                    if (role != RoleType.ROLE_MEMBER.toString()) DotoriCheckBox(onCheckedChange = onCheckBoxChange)
                 }
 
                 Column(
@@ -81,14 +94,18 @@ fun DotoriStudentCard(
                             color = DotoriTheme.colors.neutral10
                         )
 
-                        if (gender == "MAN") MaleIcon(
-                            contentDescription = "male icon",
-                            tint = DotoriTheme.colors.neutral10
-                        )
-                        else FemaleIcon(
-                            contentDescription = "female icon",
-                            tint = DotoriTheme.colors.neutral10
-                        )
+                        if (gender == GenderType.MAN.toString()) {
+                            MaleIcon(
+                                contentDescription = "male icon",
+                                tint = DotoriTheme.colors.neutral10
+                            )
+                        } else {
+                            FemaleIcon(
+                                contentDescription = "female icon",
+                                tint = DotoriTheme.colors.neutral10
+                            )
+                        }
+
                     }
 
                     Text(
@@ -137,4 +154,29 @@ fun BoxScope.CardLastNumberImage(drawableId: Int) {
         contentDescription = "last student image",
         colorFilter = ColorFilter.tint(color = DotoriTheme.colors.primary10)
     )
+}
+
+@Preview
+@Composable
+fun DotoriStudentCardPreview() {
+    val list = listOf(1,2,3,4,5)
+    var checkBoxState by remember { mutableStateOf(false) }
+
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 12.dp)
+    ) {
+        items(list) { position ->
+            DotoriStudentCard(
+                name = "임가람",
+                gender = "MAN",
+                role = "ROLE_MEMBER",
+                studentNumber = "3412",
+                position = position,
+                mode = Types.CardType.SELF_STUDY,
+                isLast = list.lastIndex + 1 == position,
+                onCheckBoxChange = { checkBoxState = it }
+            )
+        }
+    }
 }
