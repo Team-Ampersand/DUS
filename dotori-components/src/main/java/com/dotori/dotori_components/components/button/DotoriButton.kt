@@ -11,7 +11,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.utils.Types
@@ -24,7 +23,6 @@ fun DotoriButton(
     modifier: Modifier = Modifier,
     text: String,
     colors: Color = DotoriTheme.colors.primary10,
-    style: TextStyle = DotoriTheme.typography.smallTitle,
     onClick: () -> Unit
 ) {
     if (colors == Transparent) {
@@ -41,7 +39,8 @@ fun DotoriButton(
             Text(
                 modifier = Modifier.padding(horizontal = 15.dp),
                 text = text,
-                style = style
+                color = DotoriTheme.colors.neutral50,
+                style = DotoriTheme.typography.smallTitle
             )
         }
     } else {
@@ -57,7 +56,8 @@ fun DotoriButton(
             Text(
                 modifier = Modifier.padding(horizontal = 15.dp),
                 text = text,
-                style = style
+                color = DotoriTheme.colors.neutral50,
+                style = DotoriTheme.typography.smallTitle
             )
         }
     }
