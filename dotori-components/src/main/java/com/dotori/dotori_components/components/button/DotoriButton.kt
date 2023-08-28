@@ -1,7 +1,13 @@
 package com.dotori.dotori_components.components.button
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -10,6 +16,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.theme.DotoriTheme
 import com.dotori.dotori_components.theme.Transparent
@@ -55,5 +62,47 @@ fun DotoriButton(
                 style = DotoriTheme.typography.smallTitle
             )
         }
+    }
+}
+
+@Preview
+@Composable
+fun DotoriButtonPreview() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(DotoriTheme.colors.background)
+    ) {
+        DotoriButton(
+            text = "button",
+            colors = DotoriTheme.colors.primary30
+        ) {}
+        Spacer(modifier = Modifier.width(10.dp))
+
+        DotoriButton(
+            text = "button",
+            colors = DotoriTheme.colors.primary10
+        ) {}
+        Spacer(modifier = Modifier.width(10.dp))
+
+        DotoriButton(
+            text = "button",
+            colors = Transparent
+        ) {}
+        Spacer(modifier = Modifier.width(10.dp))
+
+        DotoriButton(
+            modifier = Modifier.fillMaxWidth(),
+            text = "button",
+            colors = DotoriTheme.colors.primary30
+        ) {}
+        Spacer(modifier = Modifier.width(10.dp))
+
+        DotoriButton(
+            modifier = Modifier.fillMaxWidth(),
+            text = "button",
+            colors = DotoriTheme.colors.primary10
+        ) {}
+        Spacer(modifier = Modifier.width(10.dp))
     }
 }
