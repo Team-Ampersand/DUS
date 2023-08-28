@@ -17,19 +17,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.button.DotoriButton
+import com.dotori.dotori_components.components.utils.RoleType
 import com.dotori.dotori_components.components.utils.Types
-import com.dotori.dotori_components.theme.ArrowRightIcon
+import com.dotori.dotori_components.theme.ArrowRight2Icon
 import com.dotori.dotori_components.theme.DotoriTheme
+import com.dotori.dotori_components.theme.RefreshIcon
+import com.dotori.dotori_components.theme.SettingIcon
 
 @Composable
 fun DotoriMainCard(
     modifier: Modifier = Modifier,
     count: Int,
     limit: Int,
+    role: String,
     mode: Types.CardType,
     arrowClick: () -> Unit,
+    settingClick: () -> Unit,
+    refreshClick: () -> Unit,
     buttonClick: () -> Unit
 ) {
     Surface(
@@ -46,7 +53,10 @@ fun DotoriMainCard(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Row(modifier = Modifier.padding(bottom = 16.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(bottom = 16.dp)
+            ) {
                 val titleText = mode.checkTitle()
                 Text(
                     text = titleText,
@@ -54,10 +64,27 @@ fun DotoriMainCard(
                     color = DotoriTheme.colors.neutral10
                 )
 
+                if (role != RoleType.ROLE_MEMBER.toString()) {
+                    SettingIcon(
+                        modifier = Modifier.clickable { settingClick() },
+                        tint = DotoriTheme.colors.neutral10,
+                        contentDescription = "change total members"
+                    )
+                }
+
                 Spacer(modifier = Modifier.weight(1f))
 
-                ArrowRightIcon(
+                RefreshIcon(
+                    modifier = Modifier
+                        .padding(end = 16.dp)
+                        .clickable { refreshClick() },
+                    tint = DotoriTheme.colors.neutral10,
+                    contentDescription = "refresh icon"
+                )
+
+                ArrowRight2Icon(
                     modifier = Modifier.clickable { arrowClick() },
+                    tint = DotoriTheme.colors.neutral10,
                     contentDescription = "arrow left"
                 )
             }
@@ -116,4 +143,19 @@ fun Types.CardType.checkTitle(): String {
         Types.CardType.SELF_STUDY -> "자습신청"
         Types.CardType.MASSAGE_CHAIR -> "안마의자"
     }
+}
+
+@Preview
+@Composable
+fun DotoriMainCardPreview() {
+    DotoriMainCard(
+        count = 10,
+        limit = 50,
+        role = "ROLE_MEMBER",
+        mode = Types.CardType.SELF_STUDY,
+        arrowClick = { /*TODO*/ },
+        settingClick = {/*TODO*/ },
+        refreshClick = {/*TODO*/ },
+        buttonClick = { /*TODO*/ },
+    )
 }
