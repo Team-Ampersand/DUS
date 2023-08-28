@@ -47,7 +47,6 @@ fun DotoriNoticeListItem(
     Column(
         modifier = modifier
             .fillMaxWidth()
-//            .height(100.dp)
             .border(
                 width = 2.dp,
                 color = if (isFocus) focusColor else background,
