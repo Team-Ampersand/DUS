@@ -98,7 +98,6 @@ fun DotoriMainCard(
                     .aspectRatio(17 / 3f)
                     .clip(RoundedCornerShape(8.dp)),
                 text = "$modeText 신청",
-                style = DotoriTheme.typography.subTitle2,
                 onClick = buttonClick
             )
         }
