@@ -56,57 +56,54 @@ fun DotoriNoticeListItem(
                 color = background,
                 shape = RoundedCornerShape(8.dp)
             )
+            .padding(
+                horizontal = 16.dp,
+                vertical = 12.dp
+            )
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null
-            ) { isFocus = !isFocus }
+            ) { isFocus = !isFocus },
+        verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
-        Column(
-            modifier = Modifier.padding(
-                horizontal = 16.dp,
-                vertical = 12.dp
-            ),
-            verticalArrangement = Arrangement.spacedBy(4.dp)
-        ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Box(
-                    modifier = Modifier
-                        .size(12.dp)
-                        .background(
-                            color = when(writer) {
-                                "도토리" -> DotoriTheme.colors.primary10
-                                "사감 선생님" -> DotoriTheme.colors.subYellow
-                                else -> DotoriTheme.colors.subRed
-                            },
-                            shape = CircleShape
-                        )
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(
-                    text = writer,
-                    color = DotoriTheme.colors.neutral10,
-                    style = DotoriTheme.typography.smallTitle
-                )
-                Spacer(modifier = Modifier.weight(1f))
-                Text(
-                    text = date,
-                    color = DotoriTheme.colors.neutral20,
-                    style = DotoriTheme.typography.caption
-                )
-            }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(
+                modifier = Modifier
+                    .size(12.dp)
+                    .background(
+                        color = when (writer) {
+                            "도토리" -> DotoriTheme.colors.primary10
+                            "사감 선생님" -> DotoriTheme.colors.subYellow
+                            else -> DotoriTheme.colors.subRed
+                        },
+                        shape = CircleShape
+                    )
+            )
+            Spacer(modifier = Modifier.width(4.dp))
             Text(
-                text = title,
+                text = writer,
+                color = DotoriTheme.colors.neutral10,
+                style = DotoriTheme.typography.smallTitle
+            )
+            Spacer(modifier = Modifier.weight(1f))
+            Text(
+                text = date,
                 color = DotoriTheme.colors.neutral20,
                 style = DotoriTheme.typography.caption
             )
-            Text(
-                text = content,
-                color = DotoriTheme.colors.neutral20,
-                style = DotoriTheme.typography.caption,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis
-            )
         }
+        Text(
+            text = title,
+            color = DotoriTheme.colors.neutral20,
+            style = DotoriTheme.typography.caption
+        )
+        Text(
+            text = content,
+            color = DotoriTheme.colors.neutral20,
+            style = DotoriTheme.typography.caption,
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis
+        )
     }
 }
 
