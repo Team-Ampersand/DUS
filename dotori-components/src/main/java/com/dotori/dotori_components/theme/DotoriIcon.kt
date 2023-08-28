@@ -394,6 +394,30 @@ fun XSmallIcon(
 }
 
 @Composable
+fun SelfStudyAllowIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    contentDescription: String?,
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.ic_self_study_allow),
+        contentDescription = contentDescription
+    )
+}
+
+@Composable
+fun SelfStudyDisallowIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    contentDescription: String?,
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.ic_self_study_disallow),
+        contentDescription = contentDescription
+    )
+}
+
+@Composable
 fun LightSwitchIcon(
     contentDescription: String?,
     modifier: Modifier = Modifier,
