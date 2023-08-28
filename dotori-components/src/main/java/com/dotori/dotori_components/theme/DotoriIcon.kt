@@ -22,6 +22,20 @@ fun ArrowRightIcon(
 }
 
 @Composable
+fun ArrowRight2Icon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    contentDescription: String?,
+) {
+    Icon(
+        painter = painterResource(id = R.drawable.ic_arrow_right2),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
+@Composable
 fun ArrowDownIcon(
     contentDescription: String?,
     modifier: Modifier = Modifier,
@@ -400,7 +414,9 @@ fun SelfStudyAllowIcon(
     contentDescription: String?,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_self_study_allow),
+        tint = tint,
         contentDescription = contentDescription
     )
 }
@@ -412,7 +428,37 @@ fun SelfStudyDisallowIcon(
     contentDescription: String?,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_self_study_disallow),
+        tint = tint,
+        contentDescription = contentDescription
+    )
+}
+
+@Composable
+fun SettingIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    contentDescription: String?,
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(id = R.drawable.ic_setting_icon),
+        tint = tint,
+        contentDescription = contentDescription
+    )
+}
+
+@Composable
+fun RefreshIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    contentDescription: String?,
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(id = R.drawable.ic_refresh_icon),
+        tint = tint,
         contentDescription = contentDescription
     )
 }
