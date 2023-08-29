@@ -82,7 +82,8 @@ fun DotoriMusicListItem(
                     indication = null,
                     onClick = onOptionClicked
                 ),
-            contentDescription = "option"
+            contentDescription = "option",
+            tint = DotoriTheme.colors.neutral30
         )
     }
 }
