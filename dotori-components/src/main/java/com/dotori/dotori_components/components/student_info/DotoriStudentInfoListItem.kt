@@ -74,13 +74,15 @@ fun DotoriStudentInfoListItem(
                 style = DotoriTheme.typography.smallTitle,
                 color = DotoriTheme.colors.neutral10
             )
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(3.dp)
+            ) {
                 Text(
                     text = studentId,
                     style = DotoriTheme.typography.smallTitle,
                     color = DotoriTheme.colors.neutral20
                 )
-                Spacer(modifier = Modifier.width(3.dp))
                 if (gender == GenderType.MAN.toString()) {
                     MaleIcon(
                         modifier = Modifier.size(14.dp),
