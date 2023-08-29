@@ -149,13 +149,6 @@ fun DotoriStudentInfoListItemPreview() {
             imageUrl = "",
             name = "김준",
             studentId = "1101",
-            gender = "MAN",
-            role = "ROLE_ADMIN"
-        ) {}
-        DotoriStudentInfoListItem(
-            imageUrl = "",
-            name = "김준",
-            studentId = "1101",
             gender = "WOMAN",
             role = "ROLE_MEMBER"
         ) {}
