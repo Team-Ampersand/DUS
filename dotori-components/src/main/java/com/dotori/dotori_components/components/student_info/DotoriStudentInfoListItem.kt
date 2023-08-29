@@ -65,7 +65,7 @@ fun DotoriStudentInfoListItem(
                 .clip(CircleShape)
                 .size(40.dp),
             imageModel = { imageUrl },
-            previewPlaceholder = R.drawable.ic_dotori,
+            previewPlaceholder = R.drawable.ic_profile_light,
         )
         Spacer(modifier = Modifier.width(12.dp))
         Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
