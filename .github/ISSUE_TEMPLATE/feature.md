@@ -3,7 +3,7 @@ name: 'Issue: ✅Feature'
 about: feature 할 일 작성하기
 title: feature
 labels: "✨ Type: Feature"
-assignees: ImGaram
+assignees: ''
 
 ---
 
