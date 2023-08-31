@@ -24,11 +24,11 @@ import com.dotori.dotori_components.theme.WakeUpMusicIcon
 @Composable
 fun DotoriNavBar(
     modifier: Modifier = Modifier,
-    homeIconClicked: () -> Unit,
-    noticeBellIconClicked: () -> Unit,
-    selfStudyIconClicked: () -> Unit,
-    massageChairClicked: () -> Unit,
-    wakeUpMusicIconClicked: () -> Unit
+    navigateToHome: () -> Unit,
+    navigateToNotice: () -> Unit,
+    navigateToSelfStudy: () -> Unit,
+    navigateMassageChair: () -> Unit,
+    navigateToWakeUpMusic: () -> Unit
 ) {
     var homeIconIsClicked by remember { mutableStateOf(false) }
     var noticeBellIconIsClicked by remember { mutableStateOf(false) }
@@ -52,7 +52,7 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     homeIconIsClicked = !homeIconIsClicked
-                    homeIconClicked()
+                    navigateToHome()
                 },
             isPressed = homeIconIsClicked
         )
@@ -64,7 +64,7 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     noticeBellIconIsClicked = !noticeBellIconIsClicked
-                    noticeBellIconClicked()
+                    navigateToNotice()
                 },
             isPressed = noticeBellIconIsClicked
         )
@@ -76,7 +76,7 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     selfStudyIconIsClicked = !selfStudyIconIsClicked
-                    selfStudyIconClicked()
+                    navigateToSelfStudy()
                 },
             isPressed = selfStudyIconIsClicked
         )
@@ -88,7 +88,7 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     massageChairIsClicked = !massageChairIsClicked
-                    massageChairClicked()
+                    navigateMassageChair()
                 },
             isPressed = massageChairIsClicked
         )
@@ -100,7 +100,7 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     wakeUpMusicIconIsClicked = !wakeUpMusicIconIsClicked
-                    wakeUpMusicIconClicked()
+                    navigateToWakeUpMusic()
                 },
             isPressed = wakeUpMusicIconIsClicked
         )
@@ -111,10 +111,10 @@ fun DotoriNavBar(
 @Composable
 fun DotoriNavBarPreview() {
     DotoriNavBar(
-        homeIconClicked = { /*TODO*/ },
-        noticeBellIconClicked = { /*TODO*/ },
-        selfStudyIconClicked = { /*TODO*/ },
-        massageChairClicked = { /*TODO*/ },
-        wakeUpMusicIconClicked = { /*TODO*/ }
+        navigateToHome = { /*TODO*/ },
+        navigateToNotice = { /*TODO*/ },
+        navigateToSelfStudy = { /*TODO*/ },
+        navigateMassageChair = { /*TODO*/ },
+        navigateToWakeUpMusic = { /*TODO*/ }
     )
 }
