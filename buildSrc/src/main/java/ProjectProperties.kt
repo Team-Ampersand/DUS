@@ -15,9 +15,9 @@ object ProjectProperties {
     const val ProguardName = "proguard-android-optimize.txt"
     const val ProguardFile = "proguard-rules.pro"
 
-    val JAVA_VERSION = JavaVersion.VERSION_1_8
+    val JAVA_VERSION = JavaVersion.VERSION_11
 
-    const val JvmTarget = "1.8"
+    const val JvmTarget = "11"
     const val ComposeVersion = "1.2.0"
 
     const val Excludes = "/META-INF/{AL2.0,LGPL2.1}"
