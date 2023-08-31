@@ -24,4 +24,7 @@ object ProjectProperties {
 
     const val projectPath = ":dotori-components"
     const val Path = "path"
+
+    const val GroupId = "com.github.dus"
+    const val ArtifactId = "DUS"
 }
