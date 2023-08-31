@@ -30,11 +30,8 @@ fun DotoriNavBar(
     navigateMassageChair: () -> Unit,
     navigateToWakeUpMusic: () -> Unit
 ) {
-    var homeIconIsClicked by remember { mutableStateOf(false) }
-    var noticeBellIconIsClicked by remember { mutableStateOf(false) }
-    var selfStudyIconIsClicked by remember { mutableStateOf(false) }
-    var massageChairIsClicked by remember { mutableStateOf(false) }
-    var wakeUpMusicIconIsClicked by remember { mutableStateOf(false) }
+    var isPressed by remember { mutableStateOf(-1) }
+    val itemList = listOf(DotoriNavBarItemType.HOME, DotoriNavBarItemType.NOTICE, DotoriNavBarItemType.SELF_STUDY, DotoriNavBarItemType.MESSAGE_CHAIR, DotoriNavBarItemType.WAKE_UP_MUSIC)
 
     Row(
         modifier = modifier
@@ -44,99 +41,30 @@ fun DotoriNavBar(
                 vertical = 12.dp
             )
     ) {
-        HomeIcon(
-            modifier = Modifier
-                .weight(1f)
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null
-                ) {
-                    homeIconIsClicked = !homeIconIsClicked
-                    if (homeIconIsClicked) {
-                        noticeBellIconIsClicked = false
-                        selfStudyIconIsClicked = false
-                        massageChairIsClicked = false
-                        wakeUpMusicIconIsClicked = false
-                    }
-                    navigateToHome()
-                },
-            isPressed = homeIconIsClicked
-        )
-        NoticeBellIcon(
-            modifier = Modifier
-                .weight(1f)
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null
-                ) {
-                    noticeBellIconIsClicked = !noticeBellIconIsClicked
-                    if (noticeBellIconIsClicked) {
-                        homeIconIsClicked = false
-                        selfStudyIconIsClicked = false
-                        massageChairIsClicked = false
-                        wakeUpMusicIconIsClicked = false
-                    }
-                    navigateToNotice()
-                },
-            isPressed = noticeBellIconIsClicked
-        )
-        SelfStudyIcon(
-            modifier = Modifier
-                .weight(1f)
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null
-                ) {
-                    selfStudyIconIsClicked = !selfStudyIconIsClicked
-                    if (selfStudyIconIsClicked) {
-                        homeIconIsClicked = false
-                        noticeBellIconIsClicked = false
-                        massageChairIsClicked = false
-                        wakeUpMusicIconIsClicked = false
-                    }
-                    navigateToSelfStudy()
-                },
-            isPressed = selfStudyIconIsClicked
-        )
-        MassageChairIcon(
-            modifier = Modifier
-                .weight(1f)
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null
-                ) {
-                    massageChairIsClicked = !massageChairIsClicked
-                    if (massageChairIsClicked) {
-                        homeIconIsClicked = false
-                        noticeBellIconIsClicked = false
-                        selfStudyIconIsClicked = false
-                        wakeUpMusicIconIsClicked = false
-                    }
-                    navigateMassageChair()
-                },
-            isPressed = massageChairIsClicked
-        )
-        WakeUpMusicIcon(
-            modifier = Modifier
-                .weight(1f)
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null
-                ) {
-                    wakeUpMusicIconIsClicked = !wakeUpMusicIconIsClicked
-                    if (wakeUpMusicIconIsClicked) {
-                        homeIconIsClicked = false
-                        noticeBellIconIsClicked = false
-                        selfStudyIconIsClicked = false
-                        massageChairIsClicked = false
-                    }
-                    navigateToWakeUpMusic()
-                },
-            isPressed = wakeUpMusicIconIsClicked
-        )
+        repeat(itemList.size) {
+            DotoriNavBarItem(
+                modifier = Modifier
+                    .weight(1f)
+                    .clickable(
+                        interactionSource = MutableInteractionSource(),
+                        indication = null,
+                        onClick = {
+                            isPressed = it
+                            when (itemList[it]) {
+                                DotoriNavBarItemType.HOME -> navigateToHome()
+                                DotoriNavBarItemType.NOTICE -> navigateToNotice()
+                                DotoriNavBarItemType.SELF_STUDY -> navigateToSelfStudy()
+                                DotoriNavBarItemType.MESSAGE_CHAIR -> navigateMassageChair()
+                                DotoriNavBarItemType.WAKE_UP_MUSIC -> navigateToWakeUpMusic()
+                            }
+                        }
+                    ),
+                type = itemList[it],
+                isPressed = isPressed == it
+            )
+        }
     }
 }
-
 
 @Preview
 @Composable
