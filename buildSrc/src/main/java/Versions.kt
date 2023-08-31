@@ -13,4 +13,7 @@ object Versions {
     const val NAVIGATION_COMPOSE = "2.5.3"
     const val PAGER_COMPOSE = "0.28.0"
     const val LANDSCAPIST_COMPOSE = "2.1.2"
+
+    const val MAVEN_GRADLE_PLUGIN = "2.1"
+    const val COMPONENT_VERSION = "1.0.0"
 }

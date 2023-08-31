@@ -3,6 +3,20 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinKapt)
     id(Plugins.kotlinParcelize)
+    id(Plugins.mavenPublish)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register("release", MavenPublication::class) {
+                from(components["release"])
+                version = Versions.COMPONENT_VERSION
+                artifactId = ProjectProperties.ArtifactId
+                groupId = ProjectProperties.GroupId
+            }
+        }
+    }
 }
 
 android {
@@ -49,6 +63,7 @@ dependencies {
 
     implementation(Compose.MATERIAL_COMPOSE)
 
+    implementation(AndroidX.APP_COMPAT)
     implementation(Compose.UI_TOOLING_PREVIEW)
     testImplementation(UnitTest.JUNIT)
     androidTestImplementation(AndroidTest.ANDROID_JUNIT)

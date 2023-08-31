@@ -31,3 +31,6 @@ object AndroidTest {
     const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO_CORE}"
 }
 
+object Gradle {
+    const val MAVEN_GRADLE_PLUGIN = "com.github.dcendents:android-maven-gradle-plugin:${Versions.MAVEN_GRADLE_PLUGIN}"
+}
