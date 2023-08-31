@@ -7,4 +7,5 @@ object Plugins {
     const val kotlinKapt = "kotlin-kapt"
     const val jetbrainsKotlinJvm = "org.jetbrains.kotlin.jvm"
     const val kotlinParcelize = "kotlin-parcelize"
+    const val mavenPublish = "maven-publish"
 }
