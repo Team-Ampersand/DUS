@@ -18,7 +18,7 @@ fun DotoriNavBarItem(
             DotoriNavBarItemType.HOME -> HomeIcon(modifier = modifier, isPressed = isPressed)
             DotoriNavBarItemType.NOTICE -> NoticeBellIcon(modifier = modifier, isPressed = isPressed)
             DotoriNavBarItemType.SELF_STUDY -> SelfStudyIcon(modifier = modifier, isPressed = isPressed)
-            DotoriNavBarItemType.MESSAGE_CHAIR -> MassageChairIcon(modifier = modifier, isPressed = isPressed)
+            DotoriNavBarItemType.MASSAGE_CHAIR -> MassageChairIcon(modifier = modifier, isPressed = isPressed)
             DotoriNavBarItemType.WAKE_UP_MUSIC -> WakeUpMusicIcon(modifier = modifier, isPressed = isPressed)
         }
 }

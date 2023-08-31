@@ -26,7 +26,7 @@ fun DotoriNavBar(
     navigateToWakeUpMusic: () -> Unit
 ) {
     var isPressed by remember { mutableStateOf(-1) }
-    val itemList = listOf(DotoriNavBarItemType.HOME, DotoriNavBarItemType.NOTICE, DotoriNavBarItemType.SELF_STUDY, DotoriNavBarItemType.MESSAGE_CHAIR, DotoriNavBarItemType.WAKE_UP_MUSIC)
+    val itemList = listOf(DotoriNavBarItemType.HOME, DotoriNavBarItemType.NOTICE, DotoriNavBarItemType.SELF_STUDY, DotoriNavBarItemType.MASSAGE_CHAIR, DotoriNavBarItemType.WAKE_UP_MUSIC)
 
     Row(
         modifier = modifier
@@ -49,7 +49,7 @@ fun DotoriNavBar(
                                 DotoriNavBarItemType.HOME -> navigateToHome()
                                 DotoriNavBarItemType.NOTICE -> navigateToNotice()
                                 DotoriNavBarItemType.SELF_STUDY -> navigateToSelfStudy()
-                                DotoriNavBarItemType.MESSAGE_CHAIR -> navigateToMassageChair()
+                                DotoriNavBarItemType.MASSAGE_CHAIR -> navigateToMassageChair()
                                 DotoriNavBarItemType.WAKE_UP_MUSIC -> navigateToWakeUpMusic()
                             }
                         }
