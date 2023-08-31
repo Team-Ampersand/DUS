@@ -52,6 +52,12 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     homeIconIsClicked = !homeIconIsClicked
+                    if (homeIconIsClicked) {
+                        noticeBellIconIsClicked = false
+                        selfStudyIconIsClicked = false
+                        massageChairIsClicked = false
+                        wakeUpMusicIconIsClicked = false
+                    }
                     navigateToHome()
                 },
             isPressed = homeIconIsClicked
@@ -64,6 +70,12 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     noticeBellIconIsClicked = !noticeBellIconIsClicked
+                    if (noticeBellIconIsClicked) {
+                        homeIconIsClicked = false
+                        selfStudyIconIsClicked = false
+                        massageChairIsClicked = false
+                        wakeUpMusicIconIsClicked = false
+                    }
                     navigateToNotice()
                 },
             isPressed = noticeBellIconIsClicked
@@ -76,6 +88,12 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     selfStudyIconIsClicked = !selfStudyIconIsClicked
+                    if (selfStudyIconIsClicked) {
+                        homeIconIsClicked = false
+                        noticeBellIconIsClicked = false
+                        massageChairIsClicked = false
+                        wakeUpMusicIconIsClicked = false
+                    }
                     navigateToSelfStudy()
                 },
             isPressed = selfStudyIconIsClicked
@@ -88,6 +106,12 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     massageChairIsClicked = !massageChairIsClicked
+                    if (massageChairIsClicked) {
+                        homeIconIsClicked = false
+                        noticeBellIconIsClicked = false
+                        selfStudyIconIsClicked = false
+                        wakeUpMusicIconIsClicked = false
+                    }
                     navigateMassageChair()
                 },
             isPressed = massageChairIsClicked
@@ -100,12 +124,19 @@ fun DotoriNavBar(
                     indication = null
                 ) {
                     wakeUpMusicIconIsClicked = !wakeUpMusicIconIsClicked
+                    if (wakeUpMusicIconIsClicked) {
+                        homeIconIsClicked = false
+                        noticeBellIconIsClicked = false
+                        selfStudyIconIsClicked = false
+                        massageChairIsClicked = false
+                    }
                     navigateToWakeUpMusic()
                 },
             isPressed = wakeUpMusicIconIsClicked
         )
     }
 }
+
 
 @Preview
 @Composable
