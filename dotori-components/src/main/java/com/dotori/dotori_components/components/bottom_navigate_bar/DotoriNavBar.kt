@@ -15,11 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.theme.DotoriTheme
-import com.dotori.dotori_components.theme.HomeIcon
-import com.dotori.dotori_components.theme.MassageChairIcon
-import com.dotori.dotori_components.theme.NoticeBellIcon
-import com.dotori.dotori_components.theme.SelfStudyIcon
-import com.dotori.dotori_components.theme.WakeUpMusicIcon
 
 @Composable
 fun DotoriNavBar(
@@ -27,7 +22,7 @@ fun DotoriNavBar(
     navigateToHome: () -> Unit,
     navigateToNotice: () -> Unit,
     navigateToSelfStudy: () -> Unit,
-    navigateMassageChair: () -> Unit,
+    navigateToMassageChair: () -> Unit,
     navigateToWakeUpMusic: () -> Unit
 ) {
     var isPressed by remember { mutableStateOf(-1) }
@@ -54,7 +49,7 @@ fun DotoriNavBar(
                                 DotoriNavBarItemType.HOME -> navigateToHome()
                                 DotoriNavBarItemType.NOTICE -> navigateToNotice()
                                 DotoriNavBarItemType.SELF_STUDY -> navigateToSelfStudy()
-                                DotoriNavBarItemType.MESSAGE_CHAIR -> navigateMassageChair()
+                                DotoriNavBarItemType.MESSAGE_CHAIR -> navigateToMassageChair()
                                 DotoriNavBarItemType.WAKE_UP_MUSIC -> navigateToWakeUpMusic()
                             }
                         }
@@ -73,7 +68,7 @@ fun DotoriNavBarPreview() {
         navigateToHome = { /*TODO*/ },
         navigateToNotice = { /*TODO*/ },
         navigateToSelfStudy = { /*TODO*/ },
-        navigateMassageChair = { /*TODO*/ },
+        navigateToMassageChair = { /*TODO*/ },
         navigateToWakeUpMusic = { /*TODO*/ }
     )
 }
