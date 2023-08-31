@@ -530,3 +530,88 @@ fun DotoriText(
         contentDescription = "도토리"
     )
 }
+
+@Composable
+fun HomeIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    isPressed: Boolean = false
+) {
+  Icon(
+      modifier = modifier,
+      painter = painterResource(
+          id = if (isPressed) R.drawable.ic_pressed_home
+          else R.drawable.ic_home
+      ),
+      tint = tint,
+      contentDescription ="홈 아이콘"
+  )
+}
+
+@Composable
+fun NoticeBellIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    isPressed: Boolean = false
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(
+            id = if (isPressed) R.drawable.ic_pressed_notice_bell
+            else R.drawable.ic_notice_bell
+        ),
+        tint = tint,
+        contentDescription ="공지사항 벨 아이콘"
+    )
+}
+
+@Composable
+fun SelfStudyIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    isPressed: Boolean = false
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(
+            id = if (isPressed) R.drawable.ic_pressed_self_study
+            else R.drawable.ic_self_study
+        ),
+        tint = tint,
+        contentDescription = "자습 아이콘"
+    )
+}
+
+@Composable
+fun MassageChairIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    isPressed: Boolean = false
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(
+            id = if (isPressed) R.drawable.ic_pressed_massage_chair
+            else R.drawable.ic_massage_chair
+        ),
+        tint = tint,
+        contentDescription ="안마의자 아이콘"
+    )
+}
+
+@Composable
+fun WakeUpMusicIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    isPressed: Boolean = false
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(
+            id = if (isPressed) R.drawable.ic_pressed_wake_up_music
+            else R.drawable.ic_wake_up_music
+        ),
+        tint = tint,
+        contentDescription ="기상 음악 아이콘"
+    )
+}
