@@ -6,7 +6,7 @@ object ProjectProperties {
 
     const val ApplicationId = "com.example.dus"
     const val CompileSdk = 33
-    const val MinSdk = 30
+    const val MinSdk = 21
     const val TargetSdk = 33
     const val VersionCode = 1
     const val VersionName = "1.0"
