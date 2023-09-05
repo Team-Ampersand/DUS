@@ -9,7 +9,7 @@ import com.example.dus.R
 
 @Composable
 fun ArrowRightIcon(
-    contentDescription: String?,
+    contentDescription: String? = "ArrowRightIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -25,7 +25,7 @@ fun ArrowRightIcon(
 fun ArrowRight2Icon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    contentDescription: String?,
+    contentDescription: String? = "ArrowRight2Icon",
 ) {
     Icon(
         painter = painterResource(id = R.drawable.ic_arrow_right2),
@@ -37,7 +37,7 @@ fun ArrowRight2Icon(
 
 @Composable
 fun ArrowDownIcon(
-    contentDescription: String?,
+    contentDescription: String? = "ArrowDownIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -51,7 +51,7 @@ fun ArrowDownIcon(
 
 @Composable
 fun ArrowLeftIcon(
-    contentDescription: String?,
+    contentDescription: String? = "ArrowLeftIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -65,7 +65,7 @@ fun ArrowLeftIcon(
 
 @Composable
 fun ArrowLeft2Icon(
-    contentDescription: String?,
+    contentDescription: String? = "ArrowLeft2Icon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -79,7 +79,7 @@ fun ArrowLeft2Icon(
 
 @Composable
 fun ListIcon(
-    contentDescription: String?,
+    contentDescription: String? = "ListIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -93,7 +93,7 @@ fun ListIcon(
 
 @Composable
 fun CalendarIcon(
-    contentDescription: String?,
+    contentDescription: String? = "CalendarIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -107,7 +107,7 @@ fun CalendarIcon(
 
 @Composable
 fun DownloadIcon(
-    contentDescription: String?,
+    contentDescription: String? = "DownloadIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -121,7 +121,7 @@ fun DownloadIcon(
 
 @Composable
 fun ExclamationMarkIcon(
-    contentDescription: String?,
+    contentDescription: String? = "ExclamationMarkIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -135,7 +135,7 @@ fun ExclamationMarkIcon(
 
 @Composable
 fun EyeCloseIcon(
-    contentDescription: String?,
+    contentDescription: String? = "EyeCloseIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -149,7 +149,7 @@ fun EyeCloseIcon(
 
 @Composable
 fun EyeOpenIcon(
-    contentDescription: String?,
+    contentDescription: String? = "EyeOpenIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -163,7 +163,7 @@ fun EyeOpenIcon(
 
 @Composable
 fun FemaleIcon(
-    contentDescription: String?,
+    contentDescription: String? = "FemaleIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -177,7 +177,7 @@ fun FemaleIcon(
 
 @Composable
 fun FilterIcon(
-    contentDescription: String?,
+    contentDescription: String? = "FilterIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -191,7 +191,7 @@ fun FilterIcon(
 
 @Composable
 fun HamburgerIcon(
-    contentDescription: String?,
+    contentDescription: String? = "HamburgerIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -205,7 +205,7 @@ fun HamburgerIcon(
 
 @Composable
 fun LockIcon(
-    contentDescription: String?,
+    contentDescription: String? = "LockIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -218,8 +218,8 @@ fun LockIcon(
 }
 
 @Composable
-fun Logout(
-    contentDescription: String?,
+fun LogoutIcon(
+    contentDescription: String? = "LogoutIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -233,7 +233,7 @@ fun Logout(
 
 @Composable
 fun MaleIcon(
-    contentDescription: String?,
+    contentDescription: String? = "MaleIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -247,7 +247,7 @@ fun MaleIcon(
 
 @Composable
 fun MeatballIcon(
-    contentDescription: String?,
+    contentDescription: String? = "MeatballIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -261,7 +261,7 @@ fun MeatballIcon(
 
 @Composable
 fun PenIcon(
-    contentDescription: String?,
+    contentDescription: String? = "PenIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -275,7 +275,7 @@ fun PenIcon(
 
 @Composable
 fun PersonIcon(
-    contentDescription: String?,
+    contentDescription: String? = "PersonIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
     isPressed: Boolean = false,
@@ -290,7 +290,7 @@ fun PersonIcon(
 
 @Composable
 fun PlusIcon(
-    contentDescription: String?,
+    contentDescription: String? = "PlusIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -304,7 +304,7 @@ fun PlusIcon(
 
 @Composable
 fun SearchIcon(
-    contentDescription: String?,
+    contentDescription: String? = "SearchIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -318,7 +318,7 @@ fun SearchIcon(
 
 @Composable
 fun ShortcutsIcon(
-    contentDescription: String?,
+    contentDescription: String? = "ShortcutsIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -332,7 +332,7 @@ fun ShortcutsIcon(
 
 @Composable
 fun TrashCanIcon(
-    contentDescription: String?,
+    contentDescription: String? = "TrashCanIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -346,7 +346,7 @@ fun TrashCanIcon(
 
 @Composable
 fun WarningIcon(
-    contentDescription: String?,
+    contentDescription: String? = "WarningIcon",
     modifier: Modifier = Modifier,
     isPressed: Boolean = false,
     tint: Color = Color.Unspecified,
@@ -367,7 +367,7 @@ fun WarningIcon(
 
 @Composable
 fun XMarkIcon(
-    contentDescription: String?,
+    contentDescription: String? = "XMarkIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -381,7 +381,7 @@ fun XMarkIcon(
 
 @Composable
 fun XMarkIcon2(
-    contentDescription: String?,
+    contentDescription: String? = "XMarkIcon2",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -395,7 +395,7 @@ fun XMarkIcon2(
 
 @Composable
 fun XSmallIcon(
-    contentDescription: String?,
+    contentDescription: String? = "XSmallIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -411,7 +411,7 @@ fun XSmallIcon(
 fun SelfStudyAllowIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    contentDescription: String?,
+    contentDescription: String? = "SelfStudyAllowIcon",
 ) {
     Icon(
         modifier = modifier,
@@ -425,7 +425,7 @@ fun SelfStudyAllowIcon(
 fun SelfStudyDisallowIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    contentDescription: String?,
+    contentDescription: String? = "SelfStudyDisallowIcon",
 ) {
     Icon(
         modifier = modifier,
@@ -439,7 +439,7 @@ fun SelfStudyDisallowIcon(
 fun SettingIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    contentDescription: String?,
+    contentDescription: String? = "SettingIcon",
 ) {
     Icon(
         modifier = modifier,
@@ -453,7 +453,7 @@ fun SettingIcon(
 fun RefreshIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    contentDescription: String?,
+    contentDescription: String? = "RefreshIcon",
 ) {
     Icon(
         modifier = modifier,
@@ -465,7 +465,7 @@ fun RefreshIcon(
 
 @Composable
 fun LightSwitchIcon(
-    contentDescription: String?,
+    contentDescription: String? = "LightSwitchIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -479,7 +479,7 @@ fun LightSwitchIcon(
 
 @Composable
 fun DarkSwitchIcon(
-    contentDescription: String?,
+    contentDescription: String? = "DarkSwitchIcon",
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
 ) {
@@ -495,7 +495,7 @@ fun DarkSwitchIcon(
 fun CheckIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    contentDescription: String?
+    contentDescription: String? = "CheckIcon"
 ) {
     Icon(
         modifier = modifier,
