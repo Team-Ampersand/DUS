@@ -12,11 +12,6 @@ object Types {
         BLUE,
     }
 
-    enum class TextFieldType {
-        LIGHT,
-        DARK
-    }
-
     enum class CardType {
         SELF_STUDY,
         MASSAGE_CHAIR

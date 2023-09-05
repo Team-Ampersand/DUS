@@ -18,13 +18,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dotori.dotori_components.components.utils.Types
 import com.dotori.dotori_components.theme.*
 
 @Composable
 fun DotoriTextField(
     modifier: Modifier = Modifier,
-    types: Types.TextFieldType,
     value: String,
     singleLine: Boolean = true,
     maxLines: Int = 1,
@@ -134,66 +132,30 @@ fun textFieldPreview() {
         Spacer(modifier = Modifier.height(20.dp))
 
         DotoriTextField(
-            types = Types.TextFieldType.LIGHT,
             value = lightTestText,
             onValueChange = { lightTestText = it },
             placeholder = "Light Dotori TextField Test"
-        )
-
-        var darkTestText by remember { mutableStateOf("") }
-        Spacer(modifier = Modifier.height(20.dp))
-
-        DotoriTextField(
-            types = Types.TextFieldType.DARK,
-            value = darkTestText,
-            onValueChange = { darkTestText = it },
-            placeholder = "Dark Dotori TextField Test"
         )
 
         var lightTestText2 by remember { mutableStateOf("") }
         Spacer(modifier = Modifier.height(20.dp))
 
         DotoriTextField(
-            types = Types.TextFieldType.LIGHT,
             value = lightTestText2,
             onValueChange = { lightTestText2 = it },
             placeholder = "Light Dotori TextField Test",
             leadingIcon = { PersonIcon(contentDescription = "PersonIcon", tint = it) },
         )
 
-        var darkTestText2 by remember { mutableStateOf("") }
-        Spacer(modifier = Modifier.height(20.dp))
-
-        DotoriTextField(
-            types = Types.TextFieldType.DARK,
-            value = darkTestText2,
-            onValueChange = { darkTestText2 = it },
-            placeholder = "Dark Dotori TextField Test",
-            trailingIcon = { EyeCloseIcon(contentDescription = "EyeCloseIcon", tint = it) }
-        )
-
         var lightTestText3 by remember { mutableStateOf("") }
         Spacer(modifier = Modifier.height(20.dp))
 
         DotoriTextField(
-            types = Types.TextFieldType.LIGHT,
             value = lightTestText3,
             onValueChange = { lightTestText3 = it },
             placeholder = "Light Dotori TextField Test",
             leadingIcon = { PersonIcon(contentDescription = "PersonIcon", tint = it) },
             trailingIcon = { XMarkIcon(contentDescription = "XMarkIcon", tint = it) }
-        )
-
-        var darkTestText3 by remember { mutableStateOf("") }
-        Spacer(modifier = Modifier.height(20.dp))
-
-        DotoriTextField(
-            types = Types.TextFieldType.DARK,
-            value = darkTestText3,
-            onValueChange = { darkTestText3 = it },
-            placeholder = "Dark Dotori TextField Test",
-            leadingIcon = { LockIcon(contentDescription = "LockIcon", tint = it) },
-            trailingIcon = { EyeCloseIcon(contentDescription = "EyeCloseIcon", tint = it) }
         )
     }
 }
