@@ -6,7 +6,6 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.theme.DotoriTheme
 import kotlinx.coroutines.*
@@ -16,34 +15,27 @@ import kotlinx.coroutines.*
 fun DotoriBottomSheetDialog(
     modifier: Modifier = Modifier,
     sheetShape: Shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
-    sheetPeekHeight: Dp = 0.dp,
-    sheetTopContent: @Composable ColumnScope.() -> Unit,
-    sheetBottomContent: @Composable ColumnScope.() -> Unit,
-    content: @Composable (sheetState: BottomSheetState) -> Unit
+    sheetContent: @Composable ColumnScope.() -> Unit,
+    content: @Composable (sheetState: ModalBottomSheetState) -> Unit
 ) {
     val sheetBackgroundColor = DotoriTheme.colors.cardBackground
-    val sheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
-    val scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState = sheetState)
+    val sheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
 
-    BottomSheetScaffold(
+    ModalBottomSheetLayout(
         modifier = modifier,
-        scaffoldState = scaffoldState,
+        sheetState = sheetState,
         sheetContent = {
             Column(
                 modifier = modifier
                     .fillMaxWidth()
                     .padding(horizontal = 20.dp, vertical = 32.dp)
             ) {
-                sheetTopContent()
-                Spacer(modifier = modifier.height(32.dp))
-                sheetBottomContent()
+                sheetContent()
             }
         },
-        sheetPeekHeight = sheetPeekHeight,
         sheetBackgroundColor = sheetBackgroundColor,
         sheetShape = sheetShape
     ) {
         content(sheetState)
     }
 }
-
