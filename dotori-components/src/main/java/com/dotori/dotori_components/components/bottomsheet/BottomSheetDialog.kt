@@ -28,15 +28,7 @@ fun DotoriBottomSheetDialog(
     ModalBottomSheetLayout(
         modifier = modifier,
         sheetState = sheetState,
-        sheetContent = {
-            Column(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp, vertical = 32.dp)
-            ) {
-                sheetContent()
-            }
-        },
+        sheetContent = { sheetContent() },
         sheetBackgroundColor = sheetBackgroundColor,
         sheetShape = sheetShape
     ) {
