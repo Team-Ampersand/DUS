@@ -9,7 +9,7 @@ object Versions {
 
     const val COMPOSE_VERSION = "1.3.1"
     const val ACTIVITY_COMPOSE = "1.6.1"
-    const val MATERIAL_COMPOSE = "1.3.1"
+    const val MATERIAL_COMPOSE = "1.4.0-alpha04"
     const val NAVIGATION_COMPOSE = "2.5.3"
     const val PAGER_COMPOSE = "0.28.0"
     const val LANDSCAPIST_COMPOSE = "2.1.2"
