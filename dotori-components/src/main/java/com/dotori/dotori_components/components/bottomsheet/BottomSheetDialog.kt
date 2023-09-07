@@ -28,7 +28,7 @@ fun DotoriBottomSheetDialog(
     ModalBottomSheetLayout(
         modifier = modifier,
         sheetState = sheetState,
-        sheetContent = { sheetContent() },
+        sheetContent = sheetContent,
         sheetBackgroundColor = sheetBackgroundColor,
         sheetShape = sheetShape
     ) {
