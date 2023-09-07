@@ -1,13 +1,16 @@
 package com.dotori.dotori_components.components.bottomsheet
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.dotori.dotori_components.components.button.DotoriButton
 import com.dotori.dotori_components.theme.DotoriTheme
 import kotlinx.coroutines.*
 
@@ -16,30 +19,16 @@ import kotlinx.coroutines.*
 fun DotoriBottomSheetDialog(
     modifier: Modifier = Modifier,
     sheetShape: Shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
-    sheetPeekHeight: Dp = 0.dp,
-    sheetTopContent: @Composable ColumnScope.() -> Unit,
-    sheetBottomContent: @Composable ColumnScope.() -> Unit,
-    content: @Composable (sheetState: BottomSheetState) -> Unit
+    sheetContent: @Composable ColumnScope.() -> Unit,
+    content: @Composable (sheetState: ModalBottomSheetState) -> Unit
 ) {
     val sheetBackgroundColor = DotoriTheme.colors.cardBackground
-    val sheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
-    val scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState = sheetState)
+    val sheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
 
-    BottomSheetScaffold(
+    ModalBottomSheetLayout(
         modifier = modifier,
-        scaffoldState = scaffoldState,
-        sheetContent = {
-            Column(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp, vertical = 32.dp)
-            ) {
-                sheetTopContent()
-                Spacer(modifier = modifier.height(32.dp))
-                sheetBottomContent()
-            }
-        },
-        sheetPeekHeight = sheetPeekHeight,
+        sheetState = sheetState,
+        sheetContent = sheetContent,
         sheetBackgroundColor = sheetBackgroundColor,
         sheetShape = sheetShape
     ) {
@@ -47,3 +36,27 @@ fun DotoriBottomSheetDialog(
     }
 }
 
+@OptIn(ExperimentalMaterialApi::class)
+@Preview
+@Composable
+fun DotoriBottomSheetDialogPreview() {
+    val coroutineScope = rememberCoroutineScope()
+
+    DotoriBottomSheetDialog(
+        sheetContent = {
+            Text(text = "test")
+        }
+    ) { sheetState ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(DotoriTheme.colors.background)
+        ) {
+            DotoriButton(text = "show") {
+                coroutineScope.launch {
+                    sheetState.show()
+                }
+            }
+        }
+    }
+}
