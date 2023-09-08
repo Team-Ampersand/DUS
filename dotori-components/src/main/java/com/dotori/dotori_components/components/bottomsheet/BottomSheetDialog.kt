@@ -11,7 +11,6 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.button.DotoriButton
-import com.dotori.dotori_components.components.calendar.DotoriCalendar
 import com.dotori.dotori_components.theme.DotoriTheme
 import kotlinx.coroutines.*
 
@@ -48,8 +47,7 @@ fun DotoriBottomSheetDialogPreview() {
 
     DotoriBottomSheetDialog(
         sheetContent = {
-            DotoriCalendar()
-//            Text(text = "test")
+            Text(text = "test")
         }
     ) { sheetState ->
         Column(
