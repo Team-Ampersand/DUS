@@ -17,6 +17,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.theme.DotoriTheme
@@ -29,6 +30,7 @@ fun DotoriButton(
     text: String,
     colors: Color = DotoriTheme.colors.primary10,
     paddingValues: PaddingValues = PaddingValues(0.dp),
+    textStyle: TextStyle = DotoriTheme.typography.smallTitle,
     onClick: () -> Unit
 ) {
     if (colors == Transparent) {
@@ -45,7 +47,7 @@ fun DotoriButton(
             Text(
                 modifier = Modifier.padding(paddingValues),
                 text = text,
-                style = DotoriTheme.typography.smallTitle
+                style = textStyle
             )
         }
     } else {
@@ -61,7 +63,7 @@ fun DotoriButton(
             Text(
                 modifier = Modifier.padding(paddingValues),
                 text = text,
-                style = DotoriTheme.typography.smallTitle
+                style = textStyle
             )
         }
     }
@@ -78,6 +80,7 @@ fun DotoriButtonPreview() {
         DotoriButton(
             text = "button",
             colors = DotoriTheme.colors.primary30,
+            textStyle = DotoriTheme.typography.caption
         ) {}
         Spacer(modifier = Modifier.height(10.dp))
 
@@ -107,7 +110,8 @@ fun DotoriButtonPreview() {
             modifier = Modifier.fillMaxWidth(),
             text = "button",
             colors = DotoriTheme.colors.primary10,
-            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
+            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
+            textStyle = DotoriTheme.typography.h4
         ) {}
         Spacer(modifier = Modifier.height(10.dp))
     }
