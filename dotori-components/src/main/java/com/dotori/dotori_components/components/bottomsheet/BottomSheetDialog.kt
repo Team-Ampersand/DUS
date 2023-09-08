@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.button.DotoriButton
+import com.dotori.dotori_components.components.calendar.DotoriCalendar
 import com.dotori.dotori_components.theme.DotoriTheme
 import kotlinx.coroutines.*
 
@@ -23,7 +24,10 @@ fun DotoriBottomSheetDialog(
     content: @Composable (sheetState: ModalBottomSheetState) -> Unit
 ) {
     val sheetBackgroundColor = DotoriTheme.colors.cardBackground
-    val sheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val sheetState = rememberModalBottomSheetState(
+        initialValue = ModalBottomSheetValue.Hidden,
+        skipHalfExpanded = true
+    )
 
     ModalBottomSheetLayout(
         modifier = modifier,
@@ -44,7 +48,8 @@ fun DotoriBottomSheetDialogPreview() {
 
     DotoriBottomSheetDialog(
         sheetContent = {
-            Text(text = "test")
+            DotoriCalendar()
+//            Text(text = "test")
         }
     ) { sheetState ->
         Column(
