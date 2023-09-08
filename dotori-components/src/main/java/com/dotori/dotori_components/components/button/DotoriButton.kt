@@ -3,11 +3,12 @@ package com.dotori.dotori_components.components.button
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -27,6 +28,7 @@ fun DotoriButton(
     modifier: Modifier = Modifier,
     text: String,
     colors: Color = DotoriTheme.colors.primary10,
+    paddingValues: PaddingValues = PaddingValues(0.dp),
     onClick: () -> Unit
 ) {
     if (colors == Transparent) {
@@ -41,7 +43,7 @@ fun DotoriButton(
             onClick = onClick
         ) {
             Text(
-                modifier = Modifier.padding(horizontal = 15.dp),
+                modifier = Modifier.padding(paddingValues),
                 text = text,
                 style = DotoriTheme.typography.smallTitle
             )
@@ -57,7 +59,7 @@ fun DotoriButton(
             onClick = onClick
         ) {
             Text(
-                modifier = Modifier.padding(horizontal = 15.dp),
+                modifier = Modifier.padding(paddingValues),
                 text = text,
                 style = DotoriTheme.typography.smallTitle
             )
@@ -75,34 +77,38 @@ fun DotoriButtonPreview() {
     ) {
         DotoriButton(
             text = "button",
-            colors = DotoriTheme.colors.primary30
+            colors = DotoriTheme.colors.primary30,
         ) {}
-        Spacer(modifier = Modifier.width(10.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         DotoriButton(
             text = "button",
-            colors = DotoriTheme.colors.primary10
+            colors = DotoriTheme.colors.primary10,
+            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
         ) {}
-        Spacer(modifier = Modifier.width(10.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         DotoriButton(
             text = "button",
-            colors = Transparent
+            colors = Transparent,
+            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
         ) {}
-        Spacer(modifier = Modifier.width(10.dp))
-
-        DotoriButton(
-            modifier = Modifier.fillMaxWidth(),
-            text = "button",
-            colors = DotoriTheme.colors.primary30
-        ) {}
-        Spacer(modifier = Modifier.width(10.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         DotoriButton(
             modifier = Modifier.fillMaxWidth(),
             text = "button",
-            colors = DotoriTheme.colors.primary10
+            colors = DotoriTheme.colors.primary30,
+            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
         ) {}
-        Spacer(modifier = Modifier.width(10.dp))
+        Spacer(modifier = Modifier.height(10.dp))
+
+        DotoriButton(
+            modifier = Modifier.fillMaxWidth(),
+            text = "button",
+            colors = DotoriTheme.colors.primary10,
+            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
+        ) {}
+        Spacer(modifier = Modifier.height(10.dp))
     }
 }
