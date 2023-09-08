@@ -23,7 +23,10 @@ fun DotoriBottomSheetDialog(
     content: @Composable (sheetState: ModalBottomSheetState) -> Unit
 ) {
     val sheetBackgroundColor = DotoriTheme.colors.cardBackground
-    val sheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val sheetState = rememberModalBottomSheetState(
+        initialValue = ModalBottomSheetValue.Hidden,
+        skipHalfExpanded = true
+    )
 
     ModalBottomSheetLayout(
         modifier = modifier,
