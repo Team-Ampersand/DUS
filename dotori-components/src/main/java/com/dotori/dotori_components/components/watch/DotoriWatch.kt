@@ -23,9 +23,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.theme.DotoriTheme
 import com.example.dus.R
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 @Composable
 fun DotoriWatch(modifier: Modifier = Modifier) {
+    val time = LocalTime.now()
     Box(modifier = modifier) {
         Box(
             modifier = Modifier
@@ -59,8 +62,16 @@ fun DotoriWatch(modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(text = "오전", style = DotoriTheme.typography.h4, color = Color.White)
-                Text(text = "12: 59: 59", style = DotoriTheme.typography.h3, color = Color.White)
+                Text(
+                    text = time.format(DateTimeFormatter.ofPattern("aa")),
+                    style = DotoriTheme.typography.h4,
+                    color = Color.White
+                )
+                Text(
+                    text = time.format(DateTimeFormatter.ofPattern("HH:Tmm:Tss")),
+                    style = DotoriTheme.typography.h3,
+                    color = Color.White
+                )
             }
         }
     }
