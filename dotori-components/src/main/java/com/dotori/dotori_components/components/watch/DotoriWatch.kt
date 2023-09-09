@@ -1,5 +1,6 @@
 package com.dotori.dotori_components.components.watch
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -23,12 +24,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.theme.DotoriTheme
 import com.example.dus.R
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.Date
 
+@SuppressLint("SimpleDateFormat")
 @Composable
 fun DotoriWatch(modifier: Modifier = Modifier) {
-    val time = LocalTime.now()
+    val time = Date()
     Box(modifier = modifier) {
         Box(
             modifier = Modifier
@@ -63,12 +65,12 @@ fun DotoriWatch(modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = time.format(DateTimeFormatter.ofPattern("aa")),
+                    text = SimpleDateFormat("aa").format(time).toString(),
                     style = DotoriTheme.typography.h4,
                     color = Color.White
                 )
                 Text(
-                    text = time.format(DateTimeFormatter.ofPattern("HH:Tmm:Tss")),
+                    text = SimpleDateFormat("HH:' 'mm:' 'ss").format(time).toString(),
                     style = DotoriTheme.typography.h3,
                     color = Color.White
                 )
