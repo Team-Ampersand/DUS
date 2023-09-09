@@ -70,7 +70,7 @@ fun DotoriWatch(modifier: Modifier = Modifier) {
                     color = Color.White
                 )
                 Text(
-                    text = SimpleDateFormat("HH:' 'mm:' 'ss").format(time).toString(),
+                    text = SimpleDateFormat("HH: mm: ss").format(time).toString(),
                     style = DotoriTheme.typography.h3,
                     color = Color.White
                 )
