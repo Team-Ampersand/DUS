@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,6 +35,8 @@ import com.dotori.dotori_components.theme.MeatballIcon
 import com.dotori.dotori_components.theme.White
 import com.example.dus.R
 import com.skydoves.landscapist.glide.GlideImage
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun DotoriStudentInfoListItem(
@@ -46,6 +49,7 @@ fun DotoriStudentInfoListItem(
     onOptionClicked: () -> Unit
 ) {
     var isClicked by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
 
     Row(
         modifier = modifier
@@ -86,13 +90,11 @@ fun DotoriStudentInfoListItem(
                 if (gender == GenderType.MAN.toString()) {
                     MaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "MaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 } else {
                     FemaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "FemaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 }
@@ -106,11 +108,14 @@ fun DotoriStudentInfoListItem(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
                 onClick = {
-                    isClicked = !isClicked
+                    isClicked = true
                     onOptionClicked()
+                    coroutineScope.launch {
+                        delay(700L)
+                        isClicked = false
+                    }
                 }
             ),
-            contentDescription = "MeatballIcon",
             tint = DotoriTheme.colors.neutral30
         )
     }
