@@ -3,6 +3,7 @@ package com.dotori.dotori_components.components.student_info
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,9 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -45,7 +44,8 @@ fun DotoriStudentInfoListItem(
     role: String,
     onOptionClicked: () -> Unit
 ) {
-    var isClicked by remember { mutableStateOf(false) }
+    val interactionSource = remember { MutableInteractionSource() }
+    val isClicked by interactionSource.collectIsPressedAsState()
 
     Row(
         modifier = modifier
@@ -86,13 +86,11 @@ fun DotoriStudentInfoListItem(
                 if (gender == GenderType.MAN.toString()) {
                     MaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "MaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 } else {
                     FemaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "FemaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 }
@@ -103,14 +101,10 @@ fun DotoriStudentInfoListItem(
         Spacer(modifier = Modifier.weight(1f))
         MeatballIcon(
             modifier = Modifier.clickable(
-                interactionSource = remember { MutableInteractionSource() },
+                interactionSource = interactionSource,
                 indication = null,
-                onClick = {
-                    isClicked = !isClicked
-                    onOptionClicked()
-                }
+                onClick = onOptionClicked
             ),
-            contentDescription = "MeatballIcon",
             tint = DotoriTheme.colors.neutral30
         )
     }
