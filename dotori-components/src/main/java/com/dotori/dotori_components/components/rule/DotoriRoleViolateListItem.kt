@@ -3,6 +3,7 @@ package com.dotori.dotori_components.components.rule
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -46,15 +47,15 @@ fun DotoriRoleViolateListItem(
     violate: String,
     onOptionClicked: () -> Unit
 ) {
-    var isClicked by remember { mutableStateOf(false) }
+    val interactionSource = remember { MutableInteractionSource() }
+    val isClicked by interactionSource.collectIsPressedAsState()
     var isChecked by remember { mutableStateOf(false) }
 
     Row(
         modifier = modifier
             .fillMaxWidth()
             .background(
-                color = if (isClicked || isChecked) DotoriTheme.colors.background else DotoriTheme.colors.cardBackground,
-                shape = RoundedCornerShape(8.dp)
+                if (isClicked || isChecked) DotoriTheme.colors.background else DotoriTheme.colors.cardBackground
             )
             .padding(
                 horizontal = 8.dp,
@@ -90,13 +91,11 @@ fun DotoriRoleViolateListItem(
                 if (gender == GenderType.MAN.toString()) {
                     MaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "MaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 } else {
                     FemaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "FemaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 }
@@ -114,14 +113,10 @@ fun DotoriRoleViolateListItem(
         Spacer(modifier = Modifier.width(15.dp))
         MeatballIcon(
             modifier = Modifier.clickable(
-                interactionSource = remember { MutableInteractionSource() },
+                interactionSource = interactionSource,
                 indication = null,
-                onClick = {
-                    isClicked = !isClicked
-                    onOptionClicked()
-                }
+                onClick = onOptionClicked
             ),
-            contentDescription = "MeatballIcon",
             tint = DotoriTheme.colors.neutral30
         )
     }
