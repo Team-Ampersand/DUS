@@ -35,7 +35,6 @@ fun DotoriRoleViolateItem(
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(8.dp))
             .background(DotoriTheme.colors.background)
     ) {
         Row(
