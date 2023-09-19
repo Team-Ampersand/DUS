@@ -92,13 +92,11 @@ fun DotoriRoleViolateListItem(
                 if (gender == GenderType.MAN.toString()) {
                     MaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "MaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 } else {
                     FemaleIcon(
                         modifier = Modifier.size(14.dp),
-                        contentDescription = "FemaleIcon",
                         tint = DotoriTheme.colors.neutral20
                     )
                 }
@@ -120,7 +118,6 @@ fun DotoriRoleViolateListItem(
                 indication = null,
                 onClick = onOptionClicked
             ),
-            contentDescription = "MeatballIcon",
             tint = DotoriTheme.colors.neutral30
         )
     }
