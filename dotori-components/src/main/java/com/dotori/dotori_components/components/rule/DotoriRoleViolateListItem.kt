@@ -6,6 +6,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,6 +25,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -45,6 +48,7 @@ fun DotoriRoleViolateListItem(
     studentId: String,
     gender: String,
     violate: String,
+    shape: Shape,
     onOptionClicked: () -> Unit
 ) {
     val interactionSource = remember { MutableInteractionSource() }
@@ -55,7 +59,8 @@ fun DotoriRoleViolateListItem(
         modifier = modifier
             .fillMaxWidth()
             .background(
-                if (isClicked || isChecked) DotoriTheme.colors.background else DotoriTheme.colors.cardBackground
+                color = if (isClicked || isChecked) DotoriTheme.colors.background else DotoriTheme.colors.cardBackground,
+                shape = shape
             )
             .padding(
                 horizontal = 8.dp,
@@ -128,7 +133,7 @@ fun DotoriRoleViolateListItemPreview() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(White)
+            .background(Color.Black)
             .padding(horizontal = 20.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
@@ -137,14 +142,16 @@ fun DotoriRoleViolateListItemPreview() {
             name = "김준",
             studentId = "1101",
             gender = "MAN",
-            violate = "전자기기 소지, 반입 - 사행성기구외 2개"
+            violate = "전자기기 소지, 반입 - 사행성기구외 2개",
+            shape = RoundedCornerShape(8.dp)
         ) {}
         DotoriRoleViolateListItem(
             imageUrl = "",
             name = "김준",
             studentId = "1101",
             gender = "WOMAN",
-            violate = "전자기기 소지, 반입 - 사행성기구외 2개"
+            violate = "전자기기 소지, 반입 - 사행성기구외 2개",
+            shape = RoundedCornerShape(0.dp)
         ) {}
     }
 }
