@@ -55,8 +55,7 @@ fun DotoriRoleViolateListItem(
         modifier = modifier
             .fillMaxWidth()
             .background(
-                color = if (isClicked || isChecked) DotoriTheme.colors.background else DotoriTheme.colors.cardBackground,
-                shape = RoundedCornerShape(8.dp)
+                if (isClicked || isChecked) DotoriTheme.colors.background else DotoriTheme.colors.cardBackground
             )
             .padding(
                 horizontal = 8.dp,
