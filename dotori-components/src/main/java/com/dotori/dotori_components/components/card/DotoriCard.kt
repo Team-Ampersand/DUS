@@ -30,7 +30,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dotori.dotori_components.components.checkbox.DotoriCheckBox
 import com.dotori.dotori_components.components.utils.GenderType
-import com.dotori.dotori_components.components.utils.RoleType
 import com.dotori.dotori_components.components.utils.Theme
 import com.dotori.dotori_components.components.utils.Types
 import com.dotori.dotori_components.theme.DotoriTheme
@@ -71,7 +70,7 @@ fun DotoriStudentCard(
 
                     Spacer(modifier = Modifier.weight(1f))
 
-                    if (role != RoleType.ROLE_MEMBER.toString()) DotoriCheckBox(onCheckedChange = onCheckBoxChange)
+                    if (role != "member") DotoriCheckBox(onCheckedChange = onCheckBoxChange)
                 }
 
                 Column(
