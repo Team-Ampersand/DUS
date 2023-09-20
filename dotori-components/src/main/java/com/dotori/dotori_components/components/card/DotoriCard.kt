@@ -169,7 +169,7 @@ fun DotoriStudentCardPreview() {
             DotoriStudentCard(
                 name = "임가람",
                 gender = "MAN",
-                role = "ROLE_MEMBER",
+                role = "member",
                 studentNumber = "3412",
                 position = position,
                 mode = Types.CardType.SELF_STUDY,
