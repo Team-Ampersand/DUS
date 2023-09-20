@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -31,7 +30,9 @@ fun DotoriButton(
     modifier: Modifier = Modifier,
     text: String,
     colors: Color = DotoriTheme.colors.primary10,
+    textColor: Color = DotoriTheme.colors.neutral30,
     shape: Shape = RoundedCornerShape(8.dp),
+    border: BorderStroke = BorderStroke(1.dp, DotoriTheme.colors.neutral30),
     paddingValues: PaddingValues = PaddingValues(0.dp),
     textStyle: TextStyle = DotoriTheme.typography.smallTitle,
     onClick: () -> Unit
@@ -39,7 +40,7 @@ fun DotoriButton(
     if (colors == Transparent) {
         OutlinedButton(
             modifier = modifier,
-            border = BorderStroke(1.dp, DotoriTheme.colors.neutral30),
+            border = border,
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Transparent,
                 contentColor = DotoriTheme.colors.neutral20
@@ -50,6 +51,7 @@ fun DotoriButton(
         ) {
             Text(
                 text = text,
+                color = textColor,
                 style = textStyle
             )
         }
@@ -66,6 +68,7 @@ fun DotoriButton(
         ) {
             Text(
                 text = text,
+                color = textColor,
                 style = textStyle
             )
         }
@@ -98,7 +101,9 @@ fun DotoriButtonPreview() {
             text = "button",
             colors = Transparent,
             paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
-            shape = CircleShape
+            shape = CircleShape,
+            border = BorderStroke(1.dp, DotoriTheme.colors.subRed),
+            textColor = DotoriTheme.colors.subRed
         ) {}
         Spacer(modifier = Modifier.height(10.dp))
 
