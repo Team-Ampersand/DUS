@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -17,6 +18,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,6 +31,7 @@ fun DotoriButton(
     modifier: Modifier = Modifier,
     text: String,
     colors: Color = DotoriTheme.colors.primary10,
+    shape: Shape = RoundedCornerShape(8.dp),
     paddingValues: PaddingValues = PaddingValues(0.dp),
     textStyle: TextStyle = DotoriTheme.typography.smallTitle,
     onClick: () -> Unit
@@ -41,11 +44,11 @@ fun DotoriButton(
                 backgroundColor = Transparent,
                 contentColor = DotoriTheme.colors.neutral20
             ),
-            shape = RoundedCornerShape(8.dp),
+            contentPadding = paddingValues,
+            shape = shape,
             onClick = onClick
         ) {
             Text(
-                modifier = Modifier.padding(paddingValues),
                 text = text,
                 style = textStyle
             )
@@ -57,11 +60,11 @@ fun DotoriButton(
                 backgroundColor = colors,
                 contentColor = White
             ),
-            shape = RoundedCornerShape(8.dp),
+            contentPadding = paddingValues,
+            shape = shape,
             onClick = onClick
         ) {
             Text(
-                modifier = Modifier.padding(paddingValues),
                 text = text,
                 style = textStyle
             )
@@ -94,7 +97,8 @@ fun DotoriButtonPreview() {
         DotoriButton(
             text = "button",
             colors = Transparent,
-            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
+            paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
+            shape = CircleShape
         ) {}
         Spacer(modifier = Modifier.height(10.dp))
 
