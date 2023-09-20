@@ -44,11 +44,11 @@ fun DotoriButton(
                 backgroundColor = Transparent,
                 contentColor = DotoriTheme.colors.neutral20
             ),
+            contentPadding = paddingValues,
             shape = shape,
             onClick = onClick
         ) {
             Text(
-                modifier = Modifier.padding(paddingValues),
                 text = text,
                 style = textStyle
             )
@@ -60,11 +60,11 @@ fun DotoriButton(
                 backgroundColor = colors,
                 contentColor = White
             ),
+            contentPadding = paddingValues,
             shape = shape,
             onClick = onClick
         ) {
             Text(
-                modifier = Modifier.padding(paddingValues),
                 text = text,
                 style = textStyle
             )
