@@ -32,6 +32,7 @@ fun DotoriButton(
     text: String,
     colors: Color = DotoriTheme.colors.primary10,
     shape: Shape = RoundedCornerShape(8.dp),
+    border: BorderStroke = BorderStroke(1.dp, DotoriTheme.colors.neutral30),
     paddingValues: PaddingValues = PaddingValues(0.dp),
     textStyle: TextStyle = DotoriTheme.typography.smallTitle,
     onClick: () -> Unit
@@ -39,7 +40,7 @@ fun DotoriButton(
     if (colors == Transparent) {
         OutlinedButton(
             modifier = modifier,
-            border = BorderStroke(1.dp, DotoriTheme.colors.neutral30),
+            border = border,
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Transparent,
                 contentColor = DotoriTheme.colors.neutral20
@@ -98,7 +99,8 @@ fun DotoriButtonPreview() {
             text = "button",
             colors = Transparent,
             paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
-            shape = CircleShape
+            shape = CircleShape,
+            border = BorderStroke(1.dp, DotoriTheme.colors.subRed)
         ) {}
         Spacer(modifier = Modifier.height(10.dp))
 
