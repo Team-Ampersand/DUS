@@ -43,6 +43,7 @@ fun DotoriNoticeListItem(
     role: String,
     background: Color = DotoriTheme.colors.neutral50,
     focusColor: Color = DotoriTheme.colors.primary10,
+    isFocus: Boolean = false,
     onClick: () -> Unit
 ) {
     var isFocus by remember { mutableStateOf(isFocus) }
