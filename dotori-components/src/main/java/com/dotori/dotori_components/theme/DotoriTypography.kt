@@ -78,7 +78,7 @@ object DotoriTypography {
         fontFamily = suitFont,
         fontSize = 16.sp,
         fontWeight = FontWeight.Medium,
-        lineHeight = 1.5f.sp
+        lineHeight = (16 * 1.5f).sp
     )
 
     @Stable
