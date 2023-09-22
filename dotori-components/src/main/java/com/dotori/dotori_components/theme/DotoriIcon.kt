@@ -495,7 +495,7 @@ fun DarkSwitchIcon(
 fun CheckIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    contentDescription: String? = "CheckIcon"
+    contentDescription: String? = "CheckIcon",
 ) {
     Icon(
         modifier = modifier,
@@ -535,24 +535,24 @@ fun DotoriText(
 fun HomeIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    isPressed: Boolean = false
+    isPressed: Boolean = false,
 ) {
-  Icon(
-      modifier = modifier,
-      painter = painterResource(
-          id = if (isPressed) R.drawable.ic_pressed_home
-          else R.drawable.ic_home
-      ),
-      tint = tint,
-      contentDescription ="홈 아이콘"
-  )
+    Icon(
+        modifier = modifier,
+        painter = painterResource(
+            id = if (isPressed) R.drawable.ic_pressed_home
+            else R.drawable.ic_home
+        ),
+        tint = tint,
+        contentDescription = "홈 아이콘"
+    )
 }
 
 @Composable
 fun NoticeBellIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    isPressed: Boolean = false
+    isPressed: Boolean = false,
 ) {
     Icon(
         modifier = modifier,
@@ -561,7 +561,7 @@ fun NoticeBellIcon(
             else R.drawable.ic_notice_bell
         ),
         tint = tint,
-        contentDescription ="공지사항 벨 아이콘"
+        contentDescription = "공지사항 벨 아이콘"
     )
 }
 
@@ -569,7 +569,7 @@ fun NoticeBellIcon(
 fun SelfStudyIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    isPressed: Boolean = false
+    isPressed: Boolean = false,
 ) {
     Icon(
         modifier = modifier,
@@ -586,7 +586,7 @@ fun SelfStudyIcon(
 fun MassageChairIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    isPressed: Boolean = false
+    isPressed: Boolean = false,
 ) {
     Icon(
         modifier = modifier,
@@ -595,7 +595,7 @@ fun MassageChairIcon(
             else R.drawable.ic_massage_chair
         ),
         tint = tint,
-        contentDescription ="안마의자 아이콘"
+        contentDescription = "안마의자 아이콘"
     )
 }
 
@@ -603,7 +603,7 @@ fun MassageChairIcon(
 fun WakeUpMusicIcon(
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
-    isPressed: Boolean = false
+    isPressed: Boolean = false,
 ) {
     Icon(
         modifier = modifier,
@@ -612,6 +612,32 @@ fun WakeUpMusicIcon(
             else R.drawable.ic_wake_up_music
         ),
         tint = tint,
-        contentDescription ="기상 음악 아이콘"
+        contentDescription = "기상 음악 아이콘"
+    )
+}
+
+@Composable
+fun ChevronRightIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(id = R.drawable.ic_chevron_right),
+        tint = tint,
+        contentDescription = "이전 버튼"
+    )
+}
+
+@Composable
+fun ChevronLeftIcon(
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+) {
+    Icon(
+        modifier = modifier,
+        painter = painterResource(id = R.drawable.ic_chevron_left),
+        tint = tint,
+        contentDescription = "다음 버튼"
     )
 }
